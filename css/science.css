@@ -1,0 +1,1423 @@
+/* =========================================
+   STEM Learning Hub - Science Page Styles
+   Interactive and engaging elements
+   ========================================= */
+
+/* =========================================
+   Animations
+   ========================================= */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.7;
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 5px var(--science-color);
+    }
+    50% {
+        box-shadow: 0 0 20px var(--science-color), 0 0 30px var(--science-color);
+    }
+}
+
+/* =========================================
+   Progress Tracker
+   ========================================= */
+.progress-tracker {
+    margin-top: var(--spacing-xl);
+    padding: var(--spacing-lg);
+    background: var(--bg-primary);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+}
+
+.tracker-stats {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-2xl);
+    flex-wrap: wrap;
+}
+
+.tracker-stats .stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.tracker-stats .stat-icon {
+    font-size: 1.5rem;
+}
+
+.tracker-stats .stat-value {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: var(--science-color);
+}
+
+.tracker-stats .stat-label {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+}
+
+/* =========================================
+   Enhanced Quiz System
+   ========================================= */
+.quiz-container {
+    width: 100%;
+}
+
+.quiz-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-xl);
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+}
+
+.quiz-header h3 {
+    margin: 0;
+    color: white;
+}
+
+.quiz-progress {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.quiz-score {
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.quiz-progress-bar {
+    width: 150px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+}
+
+.quiz-progress-fill {
+    height: 100%;
+    background: white;
+    border-radius: var(--radius-full);
+    transition: width 0.3s ease;
+    width: 0%;
+}
+
+.quiz-question-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+.question-number {
+    font-size: var(--font-size-sm);
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: var(--spacing-sm);
+}
+
+.question-text {
+    font-size: var(--font-size-lg);
+    color: white;
+    margin-bottom: var(--spacing-lg);
+}
+
+.quiz-option {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    background: rgba(255, 255, 255, 0.1);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    margin-bottom: var(--spacing-sm);
+}
+
+.quiz-option:hover:not(.disabled) {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(5px);
+}
+
+.quiz-option input {
+    display: none;
+}
+
+.option-marker {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    font-weight: 600;
+    color: white;
+    transition: all var(--transition-fast);
+}
+
+.quiz-option:has(input:checked) .option-marker {
+    background: white;
+    color: var(--primary-color);
+}
+
+.option-text {
+    flex: 1;
+    color: white;
+}
+
+.option-indicator {
+    width: 24px;
+    height: 24px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transition: all var(--transition-fast);
+}
+
+.quiz-option:has(input:checked) .option-indicator {
+    border-color: white;
+    background: white;
+}
+
+.quiz-option.disabled {
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+.quiz-option.correct {
+    background: rgba(16, 185, 129, 0.3);
+    border: 2px solid var(--science-color);
+}
+
+.quiz-option.correct .option-marker {
+    background: var(--science-color);
+}
+
+.quiz-option.incorrect {
+    background: rgba(239, 68, 68, 0.3);
+    border: 2px solid var(--mathematics-color);
+}
+
+.quiz-option.incorrect .option-marker {
+    background: var(--mathematics-color);
+}
+
+.question-feedback {
+    margin-top: var(--spacing-lg);
+    padding: var(--spacing-md);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-md);
+}
+
+.feedback-text {
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+}
+
+.feedback-text.correct {
+    color: #4ade80;
+}
+
+.feedback-text.incorrect {
+    color: #fbbf24;
+}
+
+.explanation {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: var(--font-size-sm);
+}
+
+.submit-answer {
+    margin-top: var(--spacing-md);
+}
+
+/* Quiz Results */
+.quiz-results {
+    text-align: center;
+    padding: var(--spacing-2xl);
+}
+
+.results-icon {
+    font-size: 4rem;
+    margin-bottom: var(--spacing-md);
+    animation: bounce 1s ease infinite;
+}
+
+.results-content h4 {
+    font-size: var(--font-size-2xl);
+    color: white;
+    margin-bottom: var(--spacing-md);
+}
+
+.results-score {
+    font-size: var(--font-size-lg);
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: var(--spacing-xl);
+}
+
+.retry-quiz {
+    background: white;
+    color: var(--primary-color);
+}
+
+/* =========================================
+   Force Calculator
+   ========================================= */
+.interactive-calculator {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    margin: var(--spacing-xl) 0;
+    border: 2px solid var(--primary-color);
+}
+
+.interactive-calculator h4 {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-sm);
+    color: var(--primary-color);
+}
+
+.calculator-grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin: var(--spacing-xl) 0;
+    flex-wrap: wrap;
+}
+
+.calc-input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.calc-input-group label {
+    font-weight: 500;
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+}
+
+.calc-input-group input {
+    width: 120px;
+    padding: var(--spacing-md);
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-md);
+    text-align: center;
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    transition: all var(--transition-fast);
+}
+
+.calc-input-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+}
+
+.calc-input-group .input-icon {
+    font-size: 1.5rem;
+}
+
+.calc-equals,
+.calc-times {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.calculator-buttons {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+}
+
+.calculator-result {
+    margin-top: var(--spacing-lg);
+    padding: var(--spacing-lg);
+    background: var(--bg-primary);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    border-left: 4px solid var(--science-color);
+}
+
+.calculator-result .result-text {
+    font-size: var(--font-size-lg);
+    margin: 0;
+}
+
+/* Force Visual Animation */
+.calculator-visual {
+    margin-top: var(--spacing-xl);
+    padding: var(--spacing-lg);
+    background: var(--bg-primary);
+    border-radius: var(--radius-lg);
+}
+
+.force-animation-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: var(--spacing-md);
+    padding: var(--spacing-lg);
+    background: linear-gradient(90deg, var(--bg-tertiary) 0%, var(--bg-secondary) 100%);
+    border-radius: var(--radius-md);
+    min-height: 80px;
+    overflow: hidden;
+}
+
+.box-object {
+    font-size: 2.5rem;
+    transition: transform 0.5s ease-out;
+}
+
+.force-arrow {
+    font-size: 2rem;
+    color: var(--primary-color);
+    opacity: 0.5;
+    transform-origin: left center;
+    transition: all 0.3s ease;
+}
+
+.visual-label {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+    margin-top: var(--spacing-md);
+}
+
+/* =========================================
+   Matter Simulator
+   ========================================= */
+.matter-simulator {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    margin: var(--spacing-xl) 0;
+}
+
+.matter-simulator h4 {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-sm);
+}
+
+.simulator-container {
+    display: flex;
+    gap: var(--spacing-xl);
+    margin: var(--spacing-xl) 0;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.particle-container {
+    background: var(--bg-primary);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+}
+
+#particle-canvas {
+    display: block;
+}
+
+.temperature-control {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    min-width: 200px;
+}
+
+.temperature-control label {
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.temperature-control input[type="range"] {
+    width: 100%;
+    height: 8px;
+    border-radius: var(--radius-full);
+    background: linear-gradient(90deg, #4d96ff, #ffd93d, #ff6b6b);
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+
+.temperature-control input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 24px;
+    height: 24px;
+    background: white;
+    border: 3px solid var(--primary-color);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: var(--shadow-md);
+}
+
+.temp-display {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+#temp-value {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.state-badge {
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.state-badge.solid {
+    background: #e0e0e0;
+    color: #424242;
+}
+
+.state-badge.liquid {
+    background: #cce7ff;
+    color: #1565c0;
+}
+
+.state-badge.gas {
+    background: #fff3e0;
+    color: #e65100;
+}
+
+.temp-markers {
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--font-size-sm);
+    color: var(--text-light);
+}
+
+.simulator-info {
+    background: var(--bg-primary);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    border-left: 4px solid var(--science-color);
+}
+
+.simulator-info p {
+    margin: 0;
+}
+
+/* =========================================
+   Enhanced Periodic Table
+   ========================================= */
+.elements-showcase .elements-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    justify-content: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.element-card.interactive {
+    cursor: pointer;
+    transition: all var(--transition-base);
+    position: relative;
+}
+
+.element-card.interactive:hover {
+    transform: scale(1.15) rotate(-2deg);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.element-card .click-hint {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.6rem;
+    color: var(--text-light);
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+    white-space: nowrap;
+}
+
+.element-card:hover .click-hint {
+    opacity: 1;
+}
+
+.element-detail-panel {
+    background: var(--bg-primary);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-lg);
+    position: relative;
+}
+
+.close-panel {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--bg-tertiary);
+    border: none;
+    font-size: var(--font-size-xl);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-fast);
+}
+
+.close-panel:hover {
+    background: var(--border-color);
+}
+
+.element-large {
+    width: 120px;
+    height: 140px;
+    border-radius: var(--radius-xl);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin: 0 auto var(--spacing-lg);
+}
+
+.element-large .element-number {
+    font-size: var(--font-size-sm);
+    opacity: 0.8;
+}
+
+.element-large .element-symbol {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.element-large .element-name {
+    font-size: var(--font-size-base);
+}
+
+.element-facts h4 {
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+}
+
+.element-facts ul {
+    list-style: none;
+}
+
+.element-facts li {
+    padding: var(--spacing-sm) 0;
+    color: var(--text-secondary);
+}
+
+/* =========================================
+   DNA Game
+   ========================================= */
+.dna-game {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    margin: var(--spacing-xl) 0;
+}
+
+.dna-game h4 {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-sm);
+}
+
+.dna-game-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    margin: var(--spacing-xl) 0;
+}
+
+.dna-strand {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-sm);
+}
+
+.base-pair {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#dna-strand-2 .base-pair {
+    flex-direction: column-reverse;
+}
+
+.dna-strand .base {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    border-radius: var(--radius-md);
+    background: var(--primary-color);
+    color: white;
+}
+
+#dna-strand-1 .base[data-base="A"] { background: #ff6b6b; }
+#dna-strand-1 .base[data-base="T"] { background: #4ecdc4; }
+#dna-strand-1 .base[data-base="G"] { background: #ffe66d; color: #333; }
+#dna-strand-1 .base[data-base="C"] { background: #95e1d3; color: #333; }
+
+.dna-strand .base.empty {
+    background: var(--bg-tertiary);
+    color: var(--text-light);
+    border: 2px dashed var(--border-color);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.dna-strand .base.empty:hover {
+    border-color: var(--primary-color);
+    background: var(--bg-primary);
+}
+
+.dna-strand .base.filled {
+    cursor: pointer;
+}
+
+.dna-strand .base.correct {
+    background: var(--science-color) !important;
+    color: white !important;
+    animation: pulse 0.5s ease;
+}
+
+.dna-strand .base.incorrect {
+    background: var(--mathematics-color) !important;
+    color: white !important;
+}
+
+.dna-strand .bond {
+    font-size: var(--font-size-lg);
+    color: var(--text-light);
+    height: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.base-palette {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin: var(--spacing-xl) 0;
+}
+
+.base-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: var(--radius-lg);
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    background: var(--base-color);
+    color: white;
+    border: 3px solid transparent;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.base-btn[data-base="A"] { --base-color: #ff6b6b; }
+.base-btn[data-base="T"] { --base-color: #4ecdc4; }
+.base-btn[data-base="G"] { --base-color: #ffe66d; color: #333; }
+.base-btn[data-base="C"] { --base-color: #95e1d3; color: #333; }
+
+.base-btn:hover {
+    transform: scale(1.1);
+}
+
+.base-btn.selected {
+    border-color: var(--text-primary);
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2);
+    transform: scale(1.1);
+}
+
+.game-controls {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+}
+
+.game-feedback {
+    margin-top: var(--spacing-lg);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    text-align: center;
+    font-weight: 500;
+}
+
+.game-feedback.success {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--science-color);
+    border: 1px solid var(--science-color);
+}
+
+.game-feedback.partial {
+    background: rgba(245, 158, 11, 0.1);
+    color: var(--engineering-color);
+    border: 1px solid var(--engineering-color);
+}
+
+.game-feedback.error {
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--mathematics-color);
+    border: 1px solid var(--mathematics-color);
+}
+
+.game-score {
+    text-align: center;
+    margin-top: var(--spacing-md);
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* =========================================
+   Cell Explorer
+   ========================================= */
+.cell-explorer {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    margin: var(--spacing-xl) 0;
+}
+
+.cell-explorer h4 {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-sm);
+}
+
+.cell-diagram {
+    display: flex;
+    justify-content: center;
+    margin: var(--spacing-xl) 0;
+}
+
+.cell-membrane {
+    position: relative;
+    width: 350px;
+    height: 250px;
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    border: 4px solid #81c784;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    box-shadow: var(--shadow-lg);
+}
+
+.organelle-marker {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    transform: translate(-50%, -50%);
+}
+
+.marker-icon {
+    font-size: 1.8rem;
+    z-index: 2;
+    position: relative;
+}
+
+.marker-pulse {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: rgba(16, 185, 129, 0.3);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.organelle-marker:hover {
+    transform: translate(-50%, -50%) scale(1.2);
+}
+
+.organelle-marker.active .marker-pulse {
+    animation: glow 1s ease-in-out infinite;
+}
+
+.organelle-marker.discovered .marker-pulse {
+    background: rgba(67, 97, 238, 0.3);
+}
+
+.organelle-info-panel {
+    background: var(--bg-primary);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    min-height: 150px;
+}
+
+.organelle-info-panel .hint {
+    text-align: center;
+    color: var(--text-light);
+    margin: 0;
+}
+
+.organelle-detail {
+    animation: slideIn 0.3s ease-out;
+}
+
+.detail-header {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: flex-start;
+    margin-bottom: var(--spacing-md);
+}
+
+.detail-icon {
+    font-size: 2.5rem;
+}
+
+.detail-header h5 {
+    font-size: var(--font-size-lg);
+    margin: 0 0 var(--spacing-xs);
+}
+
+.detail-description {
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.detail-facts {
+    list-style: none;
+    margin-top: var(--spacing-md);
+}
+
+.detail-facts li {
+    padding: var(--spacing-xs) 0;
+    color: var(--text-secondary);
+}
+
+.explorer-progress {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+    font-weight: 500;
+}
+
+.explorer-progress .progress-bar {
+    flex: 1;
+    height: 8px;
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+}
+
+.explorer-progress .progress-fill {
+    height: 100%;
+    background: var(--science-color);
+    border-radius: var(--radius-full);
+    transition: width 0.5s ease;
+    width: 0%;
+}
+
+/* =========================================
+   Virtual Lab
+   ========================================= */
+.virtual-lab {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    margin: var(--spacing-xl) 0;
+}
+
+.virtual-lab h3 {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--spacing-sm);
+}
+
+.experiment-selector {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin: var(--spacing-lg) 0;
+    flex-wrap: wrap;
+}
+
+.experiment-btn {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--radius-full);
+    background: var(--bg-tertiary);
+    color: var(--text-secondary);
+    font-weight: 500;
+    transition: all var(--transition-fast);
+}
+
+.experiment-btn:hover {
+    background: var(--border-color);
+}
+
+.experiment-btn.active {
+    background: var(--science-color);
+    color: white;
+}
+
+.experiment-area {
+    background: var(--bg-primary);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+}
+
+.experiment {
+    display: none;
+}
+
+.experiment.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+#pendulum-canvas {
+    display: block;
+    margin: 0 auto;
+    background: linear-gradient(180deg, #e3f2fd 0%, #bbdefb 100%);
+    border-radius: var(--radius-lg);
+}
+
+.experiment-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+    flex-wrap: wrap;
+}
+
+.experiment-controls label {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-weight: 500;
+}
+
+.experiment-controls input[type="range"] {
+    width: 100px;
+}
+
+.experiment-data {
+    text-align: center;
+    margin-top: var(--spacing-lg);
+    font-size: var(--font-size-lg);
+}
+
+.experiment-data span {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* =========================================
+   Flashcard System
+   ========================================= */
+.flashcard-section {
+    margin-top: var(--spacing-3xl);
+    padding-top: var(--spacing-2xl);
+    border-top: 1px solid var(--border-color);
+}
+
+.flashcard-topics {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-xl);
+    flex-wrap: wrap;
+}
+
+.fc-topic-btn {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--radius-full);
+    background: var(--bg-tertiary);
+    color: var(--text-secondary);
+    font-weight: 500;
+    transition: all var(--transition-fast);
+}
+
+.fc-topic-btn:hover {
+    background: var(--border-color);
+}
+
+.fc-topic-btn.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+.flashcard-container {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.flashcard {
+    width: 100%;
+    height: 250px;
+    perspective: 1000px;
+    cursor: pointer;
+    margin-bottom: var(--spacing-xl);
+}
+
+.flashcard-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flashcard.flipped .flashcard-inner {
+    transform: rotateY(180deg);
+}
+
+.flashcard-front,
+.flashcard-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.flashcard-front {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+}
+
+.flashcard-back {
+    background: var(--bg-primary);
+    border: 2px solid var(--primary-color);
+    transform: rotateY(180deg);
+}
+
+.fc-category {
+    position: absolute;
+    top: var(--spacing-md);
+    left: var(--spacing-md);
+    background: rgba(255, 255, 255, 0.2);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-sm);
+}
+
+.fc-question {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+}
+
+.fc-hint {
+    position: absolute;
+    bottom: var(--spacing-md);
+    font-size: var(--font-size-sm);
+    opacity: 0.7;
+}
+
+.fc-answer {
+    font-size: var(--font-size-base);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+.flashcard-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-lg);
+}
+
+.fc-nav-btn {
+    background: var(--bg-tertiary);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--radius-md);
+    font-weight: 500;
+    transition: all var(--transition-fast);
+}
+
+.fc-nav-btn:hover {
+    background: var(--border-color);
+}
+
+.fc-counter {
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.flashcard-actions {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+}
+
+.flashcard-progress {
+    text-align: center;
+    margin-top: var(--spacing-lg);
+    color: var(--text-secondary);
+}
+
+.flashcard-progress span {
+    font-weight: 600;
+    color: var(--science-color);
+}
+
+/* =========================================
+   Toast Notifications
+   ========================================= */
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: var(--spacing-md) var(--spacing-xl);
+    background: var(--text-primary);
+    color: white;
+    border-radius: var(--radius-lg);
+    font-weight: 500;
+    box-shadow: var(--shadow-lg);
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all var(--transition-base);
+    z-index: 9999;
+}
+
+.toast.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.toast-success {
+    background: var(--science-color);
+}
+
+.toast-warning {
+    background: var(--engineering-color);
+}
+
+.toast-info {
+    background: var(--primary-color);
+}
+
+/* =========================================
+   Achievement Notifications
+   ========================================= */
+.achievement-notifications {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.achievement-notif {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    background: linear-gradient(135deg, #ffd700 0%, #ffaa00 100%);
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    transform: translateX(400px);
+    transition: transform var(--transition-base);
+}
+
+.achievement-notif.show {
+    transform: translateX(0);
+}
+
+.achievement-icon {
+    font-size: 2rem;
+}
+
+.achievement-content strong {
+    display: block;
+    font-size: var(--font-size-sm);
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.achievement-content p {
+    margin: 0;
+    font-weight: 600;
+    color: #333;
+}
+
+/* =========================================
+   Responsive Styles
+   ========================================= */
+@media (max-width: 768px) {
+    .tracker-stats {
+        gap: var(--spacing-lg);
+    }
+    
+    .calculator-grid {
+        flex-direction: column;
+    }
+    
+    .calc-equals,
+    .calc-times {
+        display: none;
+    }
+    
+    .simulator-container {
+        flex-direction: column;
+    }
+    
+    .particle-container {
+        width: 100%;
+    }
+    
+    #particle-canvas {
+        width: 100%;
+        height: auto;
+    }
+    
+    .cell-membrane {
+        width: 280px;
+        height: 200px;
+    }
+    
+    .organelle-marker {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .marker-icon {
+        font-size: 1.4rem;
+    }
+    
+    .dna-strand {
+        gap: var(--spacing-xs);
+    }
+    
+    .dna-strand .base {
+        width: 40px;
+        height: 40px;
+        font-size: var(--font-size-base);
+    }
+    
+    .base-btn {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .flashcard {
+        height: 200px;
+    }
+    
+    .toast {
+        left: 20px;
+        right: 20px;
+    }
+    
+    .achievement-notifications {
+        left: 20px;
+    }
+    
+    .achievement-notif {
+        transform: translateY(-200px);
+    }
+    
+    .achievement-notif.show {
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 480px) {
+    .tracker-stats .stat-value {
+        font-size: var(--font-size-xl);
+    }
+    
+    .quiz-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .quiz-progress-bar {
+        width: 100%;
+    }
+    
+    .cell-membrane {
+        width: 240px;
+        height: 170px;
+    }
+    
+    .base-palette {
+        gap: var(--spacing-sm);
+    }
+    
+    .base-btn {
+        width: 45px;
+        height: 45px;
+        font-size: var(--font-size-base);
+    }
+    
+    .experiment-controls {
+        flex-direction: column;
+    }
+    
+    .fc-question {
+        font-size: var(--font-size-base);
+    }
+}
