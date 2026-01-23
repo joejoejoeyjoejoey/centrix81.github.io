@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Technology | STEM Learning Hub</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/technology.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -44,6 +45,17 @@
     <!-- Main Content -->
     <main class="main-content">
         <div class="container">
+            <!-- Progress Tracker -->
+            <div class="learning-progress">
+                <div class="learning-progress-header">
+                    <h4>📊 Your Progress</h4>
+                    <span class="learning-progress-text">0% Complete</span>
+                </div>
+                <div class="learning-progress-track">
+                    <div class="learning-progress-bar"></div>
+                </div>
+            </div>
+
             <!-- Topic Navigation -->
             <div class="topic-nav">
                 <button class="topic-btn active" data-topic="computers">How Computers Work</button>
@@ -51,10 +63,13 @@
                 <button class="topic-btn" data-topic="internet">Internet & Networks</button>
             </div>
 
-            <!-- Computers Section -->
+            <!-- ==========================================
+                 COMPUTERS SECTION
+                 ========================================== -->
             <section id="computers" class="topic-section active">
                 <h2 class="topic-title">🖥️ How Computers Work</h2>
                 
+                <!-- What is a Computer -->
                 <div class="lesson-card">
                     <h3>What is a Computer?</h3>
                     <p>A computer is an electronic device that processes information. It follows the <strong>IPO Model</strong>:</p>
@@ -80,26 +95,27 @@
                     </div>
                 </div>
 
+                <!-- Computer Components -->
                 <div class="lesson-card">
                     <h3>Computer Components</h3>
                     
                     <div class="components-grid">
-                        <div class="component-card">
+                        <div class="component-card" data-tooltip="The brain that runs all programs">
                             <div class="component-icon">🧠</div>
                             <h4>CPU (Central Processing Unit)</h4>
                             <p>The "brain" of the computer. It executes instructions and performs calculations.</p>
                         </div>
-                        <div class="component-card">
+                        <div class="component-card" data-tooltip="Temporary memory for active programs">
                             <div class="component-icon">💾</div>
                             <h4>RAM (Memory)</h4>
                             <p>Short-term memory for currently running programs. Data is lost when powered off.</p>
                         </div>
-                        <div class="component-card">
+                        <div class="component-card" data-tooltip="Saves your files permanently">
                             <div class="component-icon">📀</div>
                             <h4>Storage (HDD/SSD)</h4>
                             <p>Long-term storage for files, programs, and the operating system.</p>
                         </div>
-                        <div class="component-card">
+                        <div class="component-card" data-tooltip="Renders images and videos">
                             <div class="component-icon">🎮</div>
                             <h4>GPU (Graphics Card)</h4>
                             <p>Renders images, videos, and graphics. Essential for gaming and design.</p>
@@ -107,9 +123,33 @@
                     </div>
                 </div>
 
+                <!-- Interactive Computer Builder -->
+                <div class="lesson-card">
+                    <h3>🏗️ Build Your Own Computer</h3>
+                    <p class="interactive-hint">Drag and drop components to build a working computer!</p>
+                    
+                    <div id="computer-builder">
+                        <p class="drag-hint">Drag components from the left to the correct slots in the computer case</p>
+                        
+                        <div class="builder-container">
+                            <div class="computer-parts"></div>
+                            <div class="computer-case"></div>
+                        </div>
+                        
+                        <div id="component-info"></div>
+                        <button id="reset-builder" class="btn btn-secondary">🔄 Reset Builder</button>
+                    </div>
+                </div>
+
+                <!-- Binary Section -->
                 <div class="lesson-card">
                     <h3>Binary: The Language of Computers</h3>
-                    <p>Computers only understand two digits: <strong>0</strong> and <strong>1</strong>. This is called binary!</p>
+                    <p>Computers only understand two digits: <strong>0</strong> and <strong>1</strong>. This is called binary! Each digit is called a "bit" and 8 bits make a "byte".</p>
+                    
+                    <div class="example-box">
+                        <h4>💡 Why Binary?</h4>
+                        <p>Computers use electricity, which can be either ON (1) or OFF (0). This simple on/off system is perfect for representing binary numbers!</p>
+                    </div>
                     
                     <div class="binary-demo">
                         <h4>Try it: Convert to Binary</h4>
@@ -122,6 +162,12 @@
                             </div>
                         </div>
                         
+                        <!-- Visual Binary Display -->
+                        <div id="binary-visual"></div>
+                        
+                        <!-- Conversion Steps -->
+                        <div id="conversion-steps"></div>
+                        
                         <div class="binary-examples">
                             <h4>Common Examples:</h4>
                             <table class="binary-table">
@@ -129,32 +175,66 @@
                                     <th>Decimal</th>
                                     <th>Binary</th>
                                 </tr>
-                                <tr><td>0</td><td>0000</td></tr>
-                                <tr><td>1</td><td>0001</td></tr>
-                                <tr><td>5</td><td>0101</td></tr>
-                                <tr><td>10</td><td>1010</td></tr>
+                                <tr><td>0</td><td>00000000</td></tr>
+                                <tr><td>1</td><td>00000001</td></tr>
+                                <tr><td>5</td><td>00000101</td></tr>
+                                <tr><td>10</td><td>00001010</td></tr>
+                                <tr><td>255</td><td>11111111</td></tr>
                             </table>
                         </div>
                     </div>
                 </div>
+
+                <!-- Computer Quiz -->
+                <div class="tech-quiz" data-answer="b">
+                    <h3>🧪 Quick Quiz: Computer Components</h3>
+                    <div class="quiz-question">
+                        <p>What does CPU stand for?</p>
+                    </div>
+                    <div class="quiz-options">
+                        <label class="quiz-option">
+                            <input type="radio" name="cpu-quiz" value="a">
+                            <span>Computer Processing Unit</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="cpu-quiz" value="b">
+                            <span>Central Processing Unit</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="cpu-quiz" value="c">
+                            <span>Central Program Unit</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="cpu-quiz" value="d">
+                            <span>Computer Program Utility</span>
+                        </label>
+                    </div>
+                    <button class="btn btn-primary check-answer">Check Answer</button>
+                    <div class="quiz-feedback"></div>
+                </div>
             </section>
 
-            <!-- Programming Section -->
+            <!-- ==========================================
+                 PROGRAMMING SECTION
+                 ========================================== -->
             <section id="programming" class="topic-section">
                 <h2 class="topic-title">👨‍💻 Programming Basics</h2>
                 
+                <!-- What is Programming -->
                 <div class="lesson-card">
                     <h3>What is Programming?</h3>
-                    <p>Programming is writing instructions for a computer to follow. These instructions are called <strong>code</strong>.</p>
+                    <p>Programming is writing instructions for a computer to follow. These instructions are called <strong>code</strong>, and people who write code are called <strong>programmers</strong> or <strong>developers</strong>.</p>
                     
                     <div class="example-box">
                         <h4>🍳 Think of it like a recipe!</h4>
-                        <p>Just like a recipe tells you step-by-step how to make a cake, code tells a computer step-by-step how to complete a task.</p>
+                        <p>Just like a recipe tells you step-by-step how to make a cake, code tells a computer step-by-step how to complete a task. If you skip a step or make a mistake, the result won't be what you expected!</p>
                     </div>
                 </div>
 
+                <!-- Basic Programming Concepts -->
                 <div class="lesson-card">
                     <h3>Basic Programming Concepts</h3>
+                    <p>Every programming language uses these fundamental building blocks:</p>
                     
                     <div class="concept-cards">
                         <div class="code-concept">
@@ -169,7 +249,7 @@
                         
                         <div class="code-concept">
                             <h4>🔀 Conditionals</h4>
-                            <p>Make decisions based on conditions</p>
+                            <p>Make decisions based on conditions (if/else)</p>
                             <div class="code-block">
                                 <code>if score >= 90:</code>
                                 <code>    print("Great job!")</code>
@@ -180,7 +260,7 @@
                         
                         <div class="code-concept">
                             <h4>🔄 Loops</h4>
-                            <p>Repeat actions multiple times</p>
+                            <p>Repeat actions multiple times automatically</p>
                             <div class="code-block">
                                 <code>for i in range(5):</code>
                                 <code>    print("Hello!")</code>
@@ -190,7 +270,7 @@
                         
                         <div class="code-concept">
                             <h4>🔧 Functions</h4>
-                            <p>Reusable blocks of code</p>
+                            <p>Reusable blocks of code you can call anytime</p>
                             <div class="code-block">
                                 <code>def greet(name):</code>
                                 <code>    print("Hi, " + name)</code>
@@ -201,8 +281,83 @@
                     </div>
                 </div>
 
+                <!-- Interactive Code Playground -->
+                <div class="lesson-card">
+                    <h3>🎮 Code Playground</h3>
+                    <p class="interactive-hint">Practice writing real code and see it run!</p>
+                    
+                    <div id="code-playground">
+                        <div class="playground-header">
+                            <h4 class="challenge-title">Challenge 1: Hello World</h4>
+                            <div class="challenge-nav">
+                                <button class="prev-challenge">← Previous</button>
+                                <button class="next-challenge">Next →</button>
+                            </div>
+                        </div>
+                        
+                        <p class="challenge-description">Print "Hello, World!" to the screen</p>
+                        
+                        <div class="playground-content">
+                            <div class="editor-section">
+                                <div class="section-label">📝 Your Code</div>
+                                <textarea class="code-editor" spellcheck="false"></textarea>
+                            </div>
+                            <div class="output-section">
+                                <div class="section-label">📤 Output</div>
+                                <div class="code-output">// Output will appear here</div>
+                            </div>
+                        </div>
+                        
+                        <div class="playground-actions">
+                            <button class="run-code-btn">▶️ Run Code</button>
+                            <button class="hint-btn">💡 Hint</button>
+                        </div>
+                        
+                        <div class="challenge-progress">
+                            <div class="progress-dot active"></div>
+                            <div class="progress-dot"></div>
+                            <div class="progress-dot"></div>
+                            <div class="progress-dot"></div>
+                            <div class="progress-dot"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Typing Challenge -->
+                <div class="lesson-card">
+                    <h3>⌨️ Code Typing Challenge</h3>
+                    <p>Programmers need to type code quickly and accurately. Practice your skills!</p>
+                    
+                    <div id="typing-challenge">
+                        <div class="typing-display">
+                            <div class="display-text">Click "Start Challenge" to begin!</div>
+                        </div>
+                        
+                        <input type="text" class="typing-input" placeholder="Start typing here..." disabled>
+                        
+                        <div class="typing-stats">
+                            <div class="stat-item">
+                                <span class="stat-label">Speed</span>
+                                <span class="stat-value wpm-value">0</span>
+                                <span class="stat-unit">WPM</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Accuracy</span>
+                                <span class="stat-value accuracy-value">100</span>
+                                <span class="stat-unit">%</span>
+                            </div>
+                        </div>
+                        
+                        <button class="start-typing-btn">🚀 Start Challenge</button>
+                        
+                        <div class="typing-result"></div>
+                    </div>
+                </div>
+
+                <!-- Programming Languages -->
                 <div class="lesson-card">
                     <h3>Popular Programming Languages</h3>
+                    <p>Different programming languages are used for different purposes. Here are some of the most popular ones:</p>
                     
                     <div class="languages-grid">
                         <div class="language-card">
@@ -225,17 +380,58 @@
                             <h4>Scratch</h4>
                             <p>Visual programming for beginners. Create games and animations!</p>
                         </div>
+                        <div class="language-card">
+                            <div class="language-icon">🎮</div>
+                            <h4>C#</h4>
+                            <p>Popular for game development with Unity engine.</p>
+                        </div>
+                        <div class="language-card">
+                            <div class="language-icon">📱</div>
+                            <h4>Swift</h4>
+                            <p>Apple's language for iOS and Mac applications.</p>
+                        </div>
                     </div>
+                </div>
+
+                <!-- Programming Quiz -->
+                <div class="tech-quiz" data-answer="c">
+                    <h3>🧪 Quick Quiz: Programming</h3>
+                    <div class="quiz-question">
+                        <p>What programming concept allows you to repeat code multiple times?</p>
+                    </div>
+                    <div class="quiz-options">
+                        <label class="quiz-option">
+                            <input type="radio" name="prog-quiz" value="a">
+                            <span>Variables</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="prog-quiz" value="b">
+                            <span>Functions</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="prog-quiz" value="c">
+                            <span>Loops</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="prog-quiz" value="d">
+                            <span>Conditionals</span>
+                        </label>
+                    </div>
+                    <button class="btn btn-primary check-answer">Check Answer</button>
+                    <div class="quiz-feedback"></div>
                 </div>
             </section>
 
-            <!-- Internet Section -->
+            <!-- ==========================================
+                 INTERNET SECTION
+                 ========================================== -->
             <section id="internet" class="topic-section">
                 <h2 class="topic-title">🌐 Internet & Networks</h2>
                 
+                <!-- What is the Internet -->
                 <div class="lesson-card">
                     <h3>What is the Internet?</h3>
-                    <p>The Internet is a global network of billions of computers connected together, sharing information.</p>
+                    <p>The Internet is a global network of billions of computers connected together, sharing information. It's like a giant web that connects people, businesses, and computers all around the world!</p>
                     
                     <div class="internet-visual">
                         <div class="network-node">🏠 Your Home</div>
@@ -246,10 +442,57 @@
                         <div class="network-line"></div>
                         <div class="network-node">🖥️ Website Server</div>
                     </div>
+                    
+                    <div class="example-box">
+                        <h4>🤔 Did you know?</h4>
+                        <p>The Internet was created in 1969 as a project called ARPANET. The World Wide Web (websites) wasn't invented until 1989 by Tim Berners-Lee!</p>
+                    </div>
                 </div>
 
+                <!-- Network Packet Simulator -->
+                <div class="lesson-card">
+                    <h3>📡 Network Packet Simulator</h3>
+                    <p class="interactive-hint">Watch how data travels across the internet in real-time!</p>
+                    
+                    <div id="network-simulation">
+                        <div class="network-diagram">
+                            <div class="network-node" data-node="your-device">
+                                <span class="node-icon">📱</span>
+                                <span class="node-label">Your Device</span>
+                            </div>
+                            <div class="network-node" data-node="router">
+                                <span class="node-icon">📡</span>
+                                <span class="node-label">Router</span>
+                            </div>
+                            <div class="network-node" data-node="isp">
+                                <span class="node-icon">🏢</span>
+                                <span class="node-label">ISP</span>
+                            </div>
+                            <div class="network-node" data-node="internet">
+                                <span class="node-icon">🌍</span>
+                                <span class="node-label">Internet</span>
+                            </div>
+                            <div class="network-node" data-node="server">
+                                <span class="node-icon">🖥️</span>
+                                <span class="node-label">Server</span>
+                            </div>
+                            <div class="packet-path"></div>
+                        </div>
+                        
+                        <div class="simulation-controls">
+                            <button class="send-packet-btn">📦 Send Data Packet</button>
+                        </div>
+                        
+                        <div class="network-log">
+                            <div class="log-entry">Click "Send Data Packet" to start the simulation...</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- How Websites Work -->
                 <div class="lesson-card">
                     <h3>How Websites Work</h3>
+                    <p>When you visit a website, a lot happens behind the scenes in just milliseconds:</p>
                     
                     <div class="website-process">
                         <div class="process-step">
@@ -278,43 +521,160 @@
                             <p>Browser renders the website</p>
                         </div>
                     </div>
+                    
+                    <div class="example-box small">
+                        <h4>📖 Key Terms</h4>
+                        <p><strong>URL:</strong> Web address (Uniform Resource Locator)<br>
+                        <strong>DNS:</strong> Domain Name System - like a phone book for the internet<br>
+                        <strong>IP Address:</strong> A unique number that identifies each computer (like 192.168.1.1)</p>
+                    </div>
                 </div>
 
+                <!-- Password Strength Checker -->
+                <div class="lesson-card">
+                    <h3>🔐 Password Strength Tester</h3>
+                    <p>A strong password is your first line of defense online. Test how secure different passwords are!</p>
+                    <p><em>(⚠️ Don't use your real passwords here - this is just for practice!)</em></p>
+                    
+                    <div id="password-checker">
+                        <div class="password-input-group">
+                            <input type="password" class="password-input" placeholder="Try a test password...">
+                            <button class="toggle-password">👁️</button>
+                        </div>
+                        
+                        <div class="strength-meter">
+                            <div class="strength-bar">
+                                <div class="strength-bar-fill"></div>
+                            </div>
+                            <div class="strength-text">Enter a password to test</div>
+                        </div>
+                        
+                        <ul class="password-tips">
+                            <li class="tip-warning">⚠️ Use at least 8 characters</li>
+                            <li class="tip-warning">⚠️ Add uppercase letters (A-Z)</li>
+                            <li class="tip-warning">⚠️ Add lowercase letters (a-z)</li>
+                            <li class="tip-warning">⚠️ Add numbers (0-9)</li>
+                            <li class="tip-warning">⚠️ Add special characters (!@#$%...)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Digital Safety Tips -->
                 <div class="lesson-card safety-card">
                     <h3>🔒 Digital Safety Tips</h3>
+                    <p>Staying safe online is just as important as staying safe in the real world. Follow these tips:</p>
                     
                     <div class="safety-tips">
                         <div class="safety-tip">
                             <span class="tip-icon">🔐</span>
                             <div>
                                 <h4>Use Strong Passwords</h4>
-                                <p>Mix uppercase, lowercase, numbers, and symbols. Never share your password!</p>
+                                <p>Mix uppercase, lowercase, numbers, and symbols. Never share your password with anyone!</p>
                             </div>
                         </div>
                         <div class="safety-tip">
                             <span class="tip-icon">🎣</span>
                             <div>
                                 <h4>Beware of Phishing</h4>
-                                <p>Don't click suspicious links or download unknown attachments.</p>
+                                <p>Don't click suspicious links or download unknown attachments. Scammers try to trick you!</p>
                             </div>
                         </div>
                         <div class="safety-tip">
                             <span class="tip-icon">👤</span>
                             <div>
                                 <h4>Protect Personal Info</h4>
-                                <p>Never share your full name, address, or phone number online.</p>
+                                <p>Never share your full name, address, school, or phone number with strangers online.</p>
                             </div>
                         </div>
                         <div class="safety-tip">
                             <span class="tip-icon">✅</span>
                             <div>
                                 <h4>Verify Sources</h4>
-                                <p>Not everything online is true. Check multiple reliable sources.</p>
+                                <p>Not everything online is true. Check multiple reliable sources before believing information.</p>
+                            </div>
+                        </div>
+                        <div class="safety-tip">
+                            <span class="tip-icon">🔄</span>
+                            <div>
+                                <h4>Keep Software Updated</h4>
+                                <p>Updates often include security fixes. Keep your devices and apps up to date!</p>
+                            </div>
+                        </div>
+                        <div class="safety-tip">
+                            <span class="tip-icon">🛡️</span>
+                            <div>
+                                <h4>Use Two-Factor Authentication</h4>
+                                <p>Add an extra layer of security by requiring a code sent to your phone.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Internet Quiz -->
+                <div class="tech-quiz" data-answer="b">
+                    <h3>🧪 Quick Quiz: Internet Safety</h3>
+                    <div class="quiz-question">
+                        <p>What is "phishing"?</p>
+                    </div>
+                    <div class="quiz-options">
+                        <label class="quiz-option">
+                            <input type="radio" name="internet-quiz" value="a">
+                            <span>A type of online game</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="internet-quiz" value="b">
+                            <span>A scam that tricks people into revealing personal information</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="internet-quiz" value="c">
+                            <span>A method to speed up internet connection</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="internet-quiz" value="d">
+                            <span>A programming language</span>
+                        </label>
+                    </div>
+                    <button class="btn btn-primary check-answer">Check Answer</button>
+                    <div class="quiz-feedback"></div>
+                </div>
+
+                <!-- Additional Internet Facts -->
+                <div class="lesson-card">
+                    <h3>🌟 Fun Internet Facts</h3>
+                    
+                    <div class="facts-grid">
+                        <div class="fact-item">
+                            <span class="fact-icon">📧</span>
+                            <div class="fact-content">
+                                <h4>First Email</h4>
+                                <p>The first email was sent in 1971 by Ray Tomlinson. He also chose the @ symbol!</p>
+                            </div>
+                        </div>
+                        <div class="fact-item">
+                            <span class="fact-icon">🌐</span>
+                            <div class="fact-content">
+                                <h4>Websites</h4>
+                                <p>There are over 1.9 billion websites on the internet, but only about 400 million are active.</p>
+                            </div>
+                        </div>
+                        <div class="fact-item">
+                            <span class="fact-icon">📹</span>
+                            <div class="fact-content">
+                                <h4>YouTube</h4>
+                                <p>Over 500 hours of video are uploaded to YouTube every single minute!</p>
+                            </div>
+                        </div>
+                        <div class="fact-item">
+                            <span class="fact-icon">🔍</span>
+                            <div class="fact-content">
+                                <h4>Google Searches</h4>
+                                <p>Google processes over 8.5 billion searches per day - that's about 99,000 every second!</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
+
         </div>
     </main>
 
@@ -328,12 +688,20 @@
                     <p>Making STEM education accessible and fun for 8th graders everywhere.</p>
                 </div>
                 <div class="footer-links">
-                    <h4>Quick Links</h4>
+                    <h4>Subjects</h4>
                     <ul>
                         <li><a href="science.html">Science</a></li>
                         <li><a href="technology.html">Technology</a></li>
                         <li><a href="engineering.html">Engineering</a></li>
                         <li><a href="mathematics.html">Mathematics</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Technology Topics</h4>
+                    <ul>
+                        <li><a href="#computers">How Computers Work</a></li>
+                        <li><a href="#programming">Programming Basics</a></li>
+                        <li><a href="#internet">Internet & Networks</a></li>
                     </ul>
                 </div>
                 <div class="footer-contact">
@@ -342,6 +710,7 @@
                         <li><a href="#">Study Tips</a></li>
                         <li><a href="#">Practice Problems</a></li>
                         <li><a href="#">Video Tutorials</a></li>
+                        <li><a href="#">Glossary</a></li>
                     </ul>
                 </div>
             </div>
@@ -351,6 +720,8 @@
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="js/script.js"></script>
+    <script src="js/technology.js"></script>
 </body>
 </html>
