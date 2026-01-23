@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technology | STEM Learning Hub</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🔬</span>
+                <span class="logo-text">STEM Hub</span>
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="science.html" class="nav-link">Science</a></li>
+                <li><a href="technology.html" class="nav-link active">Technology</a></li>
+                <li><a href="engineering.html" class="nav-link">Engineering</a></li>
+                <li><a href="mathematics.html" class="nav-link">Mathematics</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header technology-header">
+        <div class="container">
+            <div class="page-header-content">
+                <span class="page-icon">💻</span>
+                <h1>Technology</h1>
+                <p>Understand computers, learn to code, and explore the digital world that shapes our lives.</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Topic Navigation -->
+            <div class="topic-nav">
+                <button class="topic-btn active" data-topic="computers">How Computers Work</button>
+                <button class="topic-btn" data-topic="programming">Programming Basics</button>
+                <button class="topic-btn" data-topic="internet">Internet & Networks</button>
+            </div>
+
+            <!-- Computers Section -->
+            <section id="computers" class="topic-section active">
+                <h2 class="topic-title">🖥️ How Computers Work</h2>
+                
+                <div class="lesson-card">
+                    <h3>What is a Computer?</h3>
+                    <p>A computer is an electronic device that processes information. It follows the <strong>IPO Model</strong>:</p>
+                    
+                    <div class="ipo-model">
+                        <div class="ipo-step">
+                            <div class="ipo-icon">📥</div>
+                            <h4>Input</h4>
+                            <p>Data goes in through keyboard, mouse, microphone, camera</p>
+                        </div>
+                        <div class="ipo-arrow">→</div>
+                        <div class="ipo-step">
+                            <div class="ipo-icon">⚙️</div>
+                            <h4>Process</h4>
+                            <p>CPU performs calculations and follows instructions</p>
+                        </div>
+                        <div class="ipo-arrow">→</div>
+                        <div class="ipo-step">
+                            <div class="ipo-icon">📤</div>
+                            <h4>Output</h4>
+                            <p>Results shown on screen, speakers, printer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-card">
+                    <h3>Computer Components</h3>
+                    
+                    <div class="components-grid">
+                        <div class="component-card">
+                            <div class="component-icon">🧠</div>
+                            <h4>CPU (Central Processing Unit)</h4>
+                            <p>The "brain" of the computer. It executes instructions and performs calculations.</p>
+                        </div>
+                        <div class="component-card">
+                            <div class="component-icon">💾</div>
+                            <h4>RAM (Memory)</h4>
+                            <p>Short-term memory for currently running programs. Data is lost when powered off.</p>
+                        </div>
+                        <div class="component-card">
+                            <div class="component-icon">📀</div>
+                            <h4>Storage (HDD/SSD)</h4>
+                            <p>Long-term storage for files, programs, and the operating system.</p>
+                        </div>
+                        <div class="component-card">
+                            <div class="component-icon">🎮</div>
+                            <h4>GPU (Graphics Card)</h4>
+                            <p>Renders images, videos, and graphics. Essential for gaming and design.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-card">
+                    <h3>Binary: The Language of Computers</h3>
+                    <p>Computers only understand two digits: <strong>0</strong> and <strong>1</strong>. This is called binary!</p>
+                    
+                    <div class="binary-demo">
+                        <h4>Try it: Convert to Binary</h4>
+                        <div class="binary-converter">
+                            <input type="number" id="decimal-input" placeholder="Enter a number (0-255)" min="0" max="255">
+                            <button class="btn btn-primary" id="convert-btn">Convert</button>
+                            <div class="binary-result">
+                                <span class="result-label">Binary:</span>
+                                <span class="result-value" id="binary-output">--------</span>
+                            </div>
+                        </div>
+                        
+                        <div class="binary-examples">
+                            <h4>Common Examples:</h4>
+                            <table class="binary-table">
+                                <tr>
+                                    <th>Decimal</th>
+                                    <th>Binary</th>
+                                </tr>
+                                <tr><td>0</td><td>0000</td></tr>
+                                <tr><td>1</td><td>0001</td></tr>
+                                <tr><td>5</td><td>0101</td></tr>
+                                <tr><td>10</td><td>1010</td></tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Programming Section -->
+            <section id="programming" class="topic-section">
+                <h2 class="topic-title">👨‍💻 Programming Basics</h2>
+                
+                <div class="lesson-card">
+                    <h3>What is Programming?</h3>
+                    <p>Programming is writing instructions for a computer to follow. These instructions are called <strong>code</strong>.</p>
+                    
+                    <div class="example-box">
+                        <h4>🍳 Think of it like a recipe!</h4>
+                        <p>Just like a recipe tells you step-by-step how to make a cake, code tells a computer step-by-step how to complete a task.</p>
+                    </div>
+                </div>
+
+                <div class="lesson-card">
+                    <h3>Basic Programming Concepts</h3>
+                    
+                    <div class="concept-cards">
+                        <div class="code-concept">
+                            <h4>📦 Variables</h4>
+                            <p>Containers that store data (like labeled boxes)</p>
+                            <div class="code-block">
+                                <code>name = "Alex"</code>
+                                <code>age = 13</code>
+                                <code>score = 95.5</code>
+                            </div>
+                        </div>
+                        
+                        <div class="code-concept">
+                            <h4>🔀 Conditionals</h4>
+                            <p>Make decisions based on conditions</p>
+                            <div class="code-block">
+                                <code>if score >= 90:</code>
+                                <code>    print("Great job!")</code>
+                                <code>else:</code>
+                                <code>    print("Keep trying!")</code>
+                            </div>
+                        </div>
+                        
+                        <div class="code-concept">
+                            <h4>🔄 Loops</h4>
+                            <p>Repeat actions multiple times</p>
+                            <div class="code-block">
+                                <code>for i in range(5):</code>
+                                <code>    print("Hello!")</code>
+                                <code># Prints Hello 5 times</code>
+                            </div>
+                        </div>
+                        
+                        <div class="code-concept">
+                            <h4>🔧 Functions</h4>
+                            <p>Reusable blocks of code</p>
+                            <div class="code-block">
+                                <code>def greet(name):</code>
+                                <code>    print("Hi, " + name)</code>
+                                <code></code>
+                                <code>greet("Alex")</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-card">
+                    <h3>Popular Programming Languages</h3>
+                    
+                    <div class="languages-grid">
+                        <div class="language-card">
+                            <div class="language-icon">🐍</div>
+                            <h4>Python</h4>
+                            <p>Great for beginners! Used in AI, web development, and data science.</p>
+                        </div>
+                        <div class="language-card">
+                            <div class="language-icon">🌐</div>
+                            <h4>JavaScript</h4>
+                            <p>Powers interactive websites. Runs in every web browser.</p>
+                        </div>
+                        <div class="language-card">
+                            <div class="language-icon">☕</div>
+                            <h4>Java</h4>
+                            <p>Used for Android apps, games, and enterprise software.</p>
+                        </div>
+                        <div class="language-card">
+                            <div class="language-icon">🎨</div>
+                            <h4>Scratch</h4>
+                            <p>Visual programming for beginners. Create games and animations!</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Internet Section -->
+            <section id="internet" class="topic-section">
+                <h2 class="topic-title">🌐 Internet & Networks</h2>
+                
+                <div class="lesson-card">
+                    <h3>What is the Internet?</h3>
+                    <p>The Internet is a global network of billions of computers connected together, sharing information.</p>
+                    
+                    <div class="internet-visual">
+                        <div class="network-node">🏠 Your Home</div>
+                        <div class="network-line"></div>
+                        <div class="network-node">📡 ISP</div>
+                        <div class="network-line"></div>
+                        <div class="network-node">🌍 Internet</div>
+                        <div class="network-line"></div>
+                        <div class="network-node">🖥️ Website Server</div>
+                    </div>
+                </div>
+
+                <div class="lesson-card">
+                    <h3>How Websites Work</h3>
+                    
+                    <div class="website-process">
+                        <div class="process-step">
+                            <div class="step-number">1</div>
+                            <h4>You type a URL</h4>
+                            <p>www.example.com</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">2</div>
+                            <h4>DNS Lookup</h4>
+                            <p>Translates URL to IP address</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">3</div>
+                            <h4>Request Sent</h4>
+                            <p>Your browser asks for the page</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">4</div>
+                            <h4>Server Responds</h4>
+                            <p>Sends HTML, CSS, JavaScript</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">5</div>
+                            <h4>Page Displays</h4>
+                            <p>Browser renders the website</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-card safety-card">
+                    <h3>🔒 Digital Safety Tips</h3>
+                    
+                    <div class="safety-tips">
+                        <div class="safety-tip">
+                            <span class="tip-icon">🔐</span>
+                            <div>
+                                <h4>Use Strong Passwords</h4>
+                                <p>Mix uppercase, lowercase, numbers, and symbols. Never share your password!</p>
+                            </div>
+                        </div>
+                        <div class="safety-tip">
+                            <span class="tip-icon">🎣</span>
+                            <div>
+                                <h4>Beware of Phishing</h4>
+                                <p>Don't click suspicious links or download unknown attachments.</p>
+                            </div>
+                        </div>
+                        <div class="safety-tip">
+                            <span class="tip-icon">👤</span>
+                            <div>
+                                <h4>Protect Personal Info</h4>
+                                <p>Never share your full name, address, or phone number online.</p>
+                            </div>
+                        </div>
+                        <div class="safety-tip">
+                            <span class="tip-icon">✅</span>
+                            <div>
+                                <h4>Verify Sources</h4>
+                                <p>Not everything online is true. Check multiple reliable sources.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">🔬</span>
+                    <span class="logo-text">STEM Hub</span>
+                    <p>Making STEM education accessible and fun for 8th graders everywhere.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="science.html">Science</a></li>
+                        <li><a href="technology.html">Technology</a></li>
+                        <li><a href="engineering.html">Engineering</a></li>
+                        <li><a href="mathematics.html">Mathematics</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Study Tips</a></li>
+                        <li><a href="#">Practice Problems</a></li>
+                        <li><a href="#">Video Tutorials</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 STEM Learning Hub. Made with ❤️ for students.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
