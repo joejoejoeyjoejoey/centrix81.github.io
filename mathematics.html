@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mathematics | STEM Learning Hub</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/mathematics.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -46,12 +47,12 @@
         <div class="container">
             <!-- Topic Navigation -->
             <div class="topic-nav">
-                <button class="topic-btn active" data-topic="algebra">Algebra</button>
-                <button class="topic-btn" data-topic="geometry">Geometry</button>
-                <button class="topic-btn" data-topic="statistics">Statistics</button>
+                <button class="topic-btn active" data-topic="algebra">🔢 Algebra</button>
+                <button class="topic-btn" data-topic="geometry">📐 Geometry</button>
+                <button class="topic-btn" data-topic="statistics">📊 Statistics</button>
             </div>
 
-            <!-- Algebra Section -->
+            <!-- ===== ALGEBRA SECTION ===== -->
             <section id="algebra" class="topic-section active">
                 <h2 class="topic-title">🔢 Algebra Fundamentals</h2>
                 
@@ -65,40 +66,41 @@
                     </div>
                 </div>
 
-                <div class="lesson-card">
-                    <h3>Solving Linear Equations</h3>
-                    <p>To solve an equation, get the variable alone on one side. Use inverse operations!</p>
+                <!-- Interactive Equation Solver -->
+                <div class="math-tool">
+                    <h3><span class="tool-icon">🔧</span> Equation Solver</h3>
+                    <p>Enter a linear equation and see the step-by-step solution!</p>
                     
-                    <div class="math-example">
-                        <h4>Example: Solve 2x + 5 = 13</h4>
-                        <div class="solution-steps">
-                            <div class="step">
-                                <span class="step-equation">2x + 5 = 13</span>
-                                <span class="step-explanation">Start with the equation</span>
-                            </div>
-                            <div class="step">
-                                <span class="step-equation">2x + 5 - 5 = 13 - 5</span>
-                                <span class="step-explanation">Subtract 5 from both sides</span>
-                            </div>
-                            <div class="step">
-                                <span class="step-equation">2x = 8</span>
-                                <span class="step-explanation">Simplify</span>
-                            </div>
-                            <div class="step">
-                                <span class="step-equation">2x ÷ 2 = 8 ÷ 2</span>
-                                <span class="step-explanation">Divide both sides by 2</span>
-                            </div>
-                            <div class="step final">
-                                <span class="step-equation">x = 4</span>
-                                <span class="step-explanation">Solution! ✓</span>
+                    <div class="equation-solver">
+                        <div class="equation-input-group">
+                            <input type="text" class="equation-input" placeholder="Enter equation (e.g., 2x + 5 = 13)">
+                            <button class="solve-btn">
+                                <span>Solve</span>
+                                <span>→</span>
+                            </button>
+                        </div>
+                        
+                        <div class="solution-display hidden">
+                            <h4>Solution Steps:</h4>
+                            <div class="solution-steps"></div>
+                        </div>
+                        
+                        <div class="quick-examples">
+                            <p>Try these examples:</p>
+                            <div class="example-buttons">
+                                <button class="example-btn">2x + 5 = 13</button>
+                                <button class="example-btn">3x - 7 = 20</button>
+                                <button class="example-btn">5x + 10 = 35</button>
+                                <button class="example-btn">4x - 8 = 16</button>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="lesson-card">
-                    <h3>Order of Operations (PEMDAS)</h3>
-                    <p>When solving expressions with multiple operations, follow this order:</p>
+                <!-- Interactive PEMDAS -->
+                <div class="math-tool pemdas-interactive">
+                    <h3><span class="tool-icon">📋</span> Order of Operations (PEMDAS)</h3>
+                    <p>Click on each step to see how expressions are evaluated following the order of operations.</p>
                     
                     <div class="pemdas-grid">
                         <div class="pemdas-item">
@@ -113,37 +115,78 @@
                         </div>
                         <div class="pemdas-item">
                             <span class="pemdas-letter">M</span>
-                            <span class="pemdas-word">Multiplication</span>
+                            <span class="pemdas-word">Multiply</span>
                             <span class="pemdas-example">4 × 5</span>
                         </div>
                         <div class="pemdas-item">
                             <span class="pemdas-letter">D</span>
-                            <span class="pemdas-word">Division</span>
+                            <span class="pemdas-word">Divide</span>
                             <span class="pemdas-example">10 ÷ 2</span>
                         </div>
                         <div class="pemdas-item">
                             <span class="pemdas-letter">A</span>
-                            <span class="pemdas-word">Addition</span>
+                            <span class="pemdas-word">Add</span>
                             <span class="pemdas-example">6 + 3</span>
                         </div>
                         <div class="pemdas-item">
                             <span class="pemdas-letter">S</span>
-                            <span class="pemdas-word">Subtraction</span>
+                            <span class="pemdas-word">Subtract</span>
                             <span class="pemdas-example">9 - 4</span>
                         </div>
                     </div>
                     
-                    <div class="example-box">
-                        <h4>Example: Solve 3 + 4 × 2²</h4>
-                        <p>= 3 + 4 × 4 (exponents first: 2² = 4)</p>
-                        <p>= 3 + 16 (multiplication next: 4 × 4 = 16)</p>
-                        <p>= <strong>19</strong> (addition last)</p>
+                    <div class="pemdas-evaluator">
+                        <p>Watch how this expression is evaluated step by step:</p>
+                        <div class="expression-display">3 + 4 × 2²</div>
+                        <div class="step-controls">
+                            <button class="step-btn primary">Next Step →</button>
+                            <button class="step-btn secondary">New Expression</button>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Practice Problems -->
-                <div class="practice-card">
-                    <h3>✏️ Practice Problems</h3>
+                <!-- Practice Problem Generator -->
+                <div class="practice-generator">
+                    <h3><span class="tool-icon">✏️</span> Practice Mode</h3>
+                    
+                    <div class="difficulty-selector">
+                        <button class="difficulty-btn" data-difficulty="easy">Easy</button>
+                        <button class="difficulty-btn active" data-difficulty="medium">Medium</button>
+                        <button class="difficulty-btn" data-difficulty="hard">Hard</button>
+                    </div>
+                    
+                    <div class="problem-area">
+                        <div class="problem-display">Loading...</div>
+                        <div class="answer-section">
+                            <input type="number" class="answer-field" placeholder="Your answer">
+                            <button class="submit-answer">Check Answer</button>
+                        </div>
+                        <div class="feedback-area"></div>
+                    </div>
+                    
+                    <div class="stats-bar">
+                        <div class="stat-item">
+                            <span class="stat-value correct">0</span>
+                            <span class="stat-label">Correct</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value incorrect">0</span>
+                            <span class="stat-label">Incorrect</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value streak">0</span>
+                            <span class="stat-label">Streak 🔥</span>
+                        </div>
+                    </div>
+                    
+                    <button class="new-problem-btn" style="display: block; margin: var(--spacing-md) auto 0; padding: var(--spacing-sm) var(--spacing-lg); background: rgba(255,255,255,0.2); border-radius: var(--radius-md);">
+                        Skip Problem →
+                    </button>
+                </div>
+
+                <!-- Original Practice Problems -->
+                <div class="practice-card" style="margin-top: var(--spacing-xl);">
+                    <h3>✏️ Quick Check</h3>
                     
                     <div class="practice-problem">
                         <p class="problem-text"><strong>1.</strong> Solve for x: 5x - 3 = 22</p>
@@ -165,12 +208,141 @@
                 </div>
             </section>
 
-            <!-- Geometry Section -->
+            <!-- ===== GEOMETRY SECTION ===== -->
             <section id="geometry" class="topic-section">
                 <h2 class="topic-title">📐 Geometry</h2>
                 
+                <!-- Interactive Shape Calculator -->
+                <div class="math-tool">
+                    <h3><span class="tool-icon">📏</span> Shape Calculator</h3>
+                    <p>Select a shape and enter dimensions to calculate area and perimeter!</p>
+                    
+                    <div class="shape-calculator">
+                        <div class="shape-selector">
+                            <button class="shape-btn active" data-shape="rectangle">
+                                <span class="shape-icon">▭</span>
+                                <span>Rectangle</span>
+                            </button>
+                            <button class="shape-btn" data-shape="triangle">
+                                <span class="shape-icon">△</span>
+                                <span>Triangle</span>
+                            </button>
+                            <button class="shape-btn" data-shape="circle">
+                                <span class="shape-icon">○</span>
+                                <span>Circle</span>
+                            </button>
+                        </div>
+                        
+                        <div class="calculator-body">
+                            <div class="input-section">
+                                <!-- Inputs will be dynamically generated -->
+                            </div>
+                            <div class="visual-section">
+                                <div class="shape-visual-container">
+                                    <div class="animated-shape rectangle"></div>
+                                </div>
+                                <div class="results-display">
+                                    <p style="text-align: center; color: var(--text-secondary);">Enter values to calculate</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pythagorean Theorem Visualizer -->
+                <div class="math-tool">
+                    <h3><span class="tool-icon">📐</span> Pythagorean Theorem Explorer</h3>
+                    <p>Explore the famous theorem: a² + b² = c²</p>
+                    
+                    <div class="pythagorean-visualizer">
+                        <div class="visualizer-container">
+                            <div class="triangle-visual">
+                                <svg class="triangle-svg" viewBox="0 0 280 280">
+                                    <!-- Squares on each side -->
+                                    <rect class="square-a" x="20" y="100" width="60" height="60" transform="rotate(-90, 20, 160)"/>
+                                    <rect class="square-b" x="80" y="180" width="80" height="80"/>
+                                    <rect class="square-c" x="80" y="20" width="100" height="100" transform="rotate(37, 80, 20)"/>
+                                    
+                                    <!-- Triangle -->
+                                    <polygon class="triangle-path" points="80,180 80,100 180,180"/>
+                                    
+                                    <!-- Labels -->
+                                    <text class="side-label" x="50" y="150" fill="#3b82f6">a</text>
+                                    <text class="side-label" x="130" y="200" fill="#10b981">b</text>
+                                    <text class="side-label" x="140" y="130" fill="#ef4444">c</text>
+                                </svg>
+                            </div>
+                            
+                            <div class="pythagorean-controls">
+                                <div class="side-inputs">
+                                    <div class="side-input-group">
+                                        <div class="side-label-box a">a</div>
+                                        <input type="number" id="side-a" class="side-input" placeholder="Side a" value="3">
+                                    </div>
+                                    <div class="side-input-group">
+                                        <div class="side-label-box b">b</div>
+                                        <input type="number" id="side-b" class="side-input" placeholder="Side b" value="4">
+                                    </div>
+                                    <div class="side-input-group">
+                                        <div class="side-label-box c">c</div>
+                                        <input type="number" id="side-c" class="side-input" placeholder="Hypotenuse c" readonly>
+                                    </div>
+                                </div>
+                                
+                                <button class="calculate-hypotenuse">Calculate Hypotenuse →</button>
+                                
+                                <div class="theorem-result">
+                                    <div class="theorem-equation">a² + b² = c²</div>
+                                    <div class="theorem-explanation">Enter values for a and b</div>
+                                </div>
+                                
+                                <button class="toggle-squares">Show Squares</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Angle Explorer -->
+                <div class="math-tool">
+                    <h3><span class="tool-icon">📐</span> Angle Explorer</h3>
+                    <p>Drag the slider to explore different types of angles!</p>
+                    
+                    <div class="angle-explorer">
+                        <div class="angle-visualizer">
+                            <div class="angle-canvas-container">
+                                <canvas id="angleCanvas" width="250" height="250"></canvas>
+                            </div>
+                            
+                            <div class="angle-controls">
+                                <div class="angle-slider-group">
+                                    <label>
+                                        <span>Angle:</span>
+                                        <span class="angle-value">45°</span>
+                                    </label>
+                                    <input type="range" class="angle-slider" min="0" max="360" value="45">
+                                </div>
+                                
+                                <div class="angle-type-display">
+                                    <div class="angle-type-name">Acute Angle</div>
+                                    <div class="angle-type-desc">Less than 90°</div>
+                                </div>
+                                
+                                <div class="quick-angles">
+                                    <button class="quick-angle-btn" data-angle="30">30°</button>
+                                    <button class="quick-angle-btn" data-angle="45">45°</button>
+                                    <button class="quick-angle-btn" data-angle="90">90°</button>
+                                    <button class="quick-angle-btn" data-angle="120">120°</button>
+                                    <button class="quick-angle-btn" data-angle="180">180°</button>
+                                    <button class="quick-angle-btn" data-angle="270">270°</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulas Reference -->
                 <div class="lesson-card">
-                    <h3>Basic Shapes and Formulas</h3>
+                    <h3>📝 Quick Reference: Shape Formulas</h3>
                     
                     <div class="shapes-formulas">
                         <div class="shape-formula-card">
@@ -201,115 +373,131 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="lesson-card">
-                    <h3>The Pythagorean Theorem</h3>
-                    <p>In a right triangle, the square of the longest side (hypotenuse) equals the sum of the squares of the other two sides.</p>
-                    
-                    <div class="theorem-visual">
-                        <div class="triangle-diagram">
-                            <div class="side-a">a</div>
-                            <div class="side-b">b</div>
-                            <div class="side-c">c</div>
-                        </div>
-                        <div class="formula-box large">
-                            <span class="formula">a² + b² = c²</span>
-                        </div>
-                    </div>
-                    
-                    <div class="math-example">
-                        <h4>Example: Find c if a = 3 and b = 4</h4>
-                        <div class="solution-steps">
-                            <div class="step">
-                                <span class="step-equation">3² + 4² = c²</span>
-                            </div>
-                            <div class="step">
-                                <span class="step-equation">9 + 16 = c²</span>
-                            </div>
-                            <div class="step">
-                                <span class="step-equation">25 = c²</span>
-                            </div>
-                            <div class="step final">
-                                <span class="step-equation">c = 5</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="lesson-card">
-                    <h3>Angle Relationships</h3>
-                    
-                    <div class="angles-grid">
-                        <div class="angle-type">
-                            <div class="angle-visual acute">∠</div>
-                            <h4>Acute Angle</h4>
-                            <p>Less than 90°</p>
-                        </div>
-                        <div class="angle-type">
-                            <div class="angle-visual right">∟</div>
-                            <h4>Right Angle</h4>
-                            <p>Exactly 90°</p>
-                        </div>
-                        <div class="angle-type">
-                            <div class="angle-visual obtuse">∠</div>
-                            <h4>Obtuse Angle</h4>
-                            <p>More than 90°, less than 180°</p>
-                        </div>
-                        <div class="angle-type">
-                            <div class="angle-visual straight">—</div>
-                            <h4>Straight Angle</h4>
-                            <p>Exactly 180°</p>
-                        </div>
-                    </div>
-
-                    <div class="example-box">
-                        <h4>Key Facts:</h4>
-                        <ul>
-                            <li><strong>Complementary angles</strong> add up to 90°</li>
-                            <li><strong>Supplementary angles</strong> add up to 180°</li>
-                            <li>Angles in a <strong>triangle</strong> add up to 180°</li>
-                        </ul>
-                    </div>
-                </div>
             </section>
 
-            <!-- Statistics Section -->
+            <!-- ===== STATISTICS SECTION ===== -->
             <section id="statistics" class="topic-section">
                 <h2 class="topic-title">📊 Statistics & Probability</h2>
                 
-                <div class="lesson-card">
-                    <h3>Measures of Central Tendency</h3>
-                    <p>These values describe the "center" of a data set:</p>
+                <!-- Enhanced Statistics Calculator -->
+                <div class="math-tool">
+                    <h3><span class="tool-icon">📈</span> Statistics Calculator</h3>
+                    <p>Enter a set of numbers to calculate mean, median, mode, and more!</p>
                     
-                    <div class="stats-measures">
-                        <div class="measure-card">
-                            <h4>Mean (Average)</h4>
-                            <p>Add all values, divide by the count</p>
-                            <div class="formula-box">
-                                <span class="formula">Mean = Sum of values ÷ Number of values</span>
+                    <div class="stats-calculator">
+                        <div class="data-input-area">
+                            <label for="stats-data">Enter numbers (separated by commas):</label>
+                            <input type="text" class="data-input" id="stats-data" placeholder="e.g., 5, 10, 15, 20, 25">
+                            <div class="data-actions">
+                                <button class="btn btn-primary calculate-stats">Calculate</button>
+                                <button class="random-data-btn">🎲 Random Data</button>
                             </div>
                         </div>
                         
-                        <div class="measure-card">
-                            <h4>Median</h4>
-                            <p>The middle value when data is ordered</p>
-                            <div class="example-box small">
-                                <p>Data: 2, 5, 7, 8, 12 → Median = <strong>7</strong></p>
-                            </div>
+                        <div class="stats-results">
+                            <p style="text-align: center; color: var(--text-secondary);">Enter some numbers to see statistics</p>
                         </div>
                         
-                        <div class="measure-card">
-                            <h4>Mode</h4>
-                            <p>The value that appears most often</p>
-                            <div class="example-box small">
-                                <p>Data: 3, 5, 5, 7, 5, 9 → Mode = <strong>5</strong></p>
+                        <div class="data-visualization">
+                            <h4 style="margin-bottom: var(--spacing-md);">Data Visualization</h4>
+                            <div class="chart-container">
+                                <!-- Chart bars will be generated dynamically -->
                             </div>
                         </div>
                     </div>
                 </div>
 
+                <!-- Probability Simulator -->
+                <div class="math-tool probability-simulator">
+                    <h3><span class="tool-icon">🎲</span> Probability Simulator</h3>
+                    <p>Explore probability with dice rolls and coin flips!</p>
+                    
+                    <div class="simulator-tabs">
+                        <button class="sim-tab active" data-type="dice">
+                            <span class="tab-icon">🎲</span>
+                            <span>Dice</span>
+                        </button>
+                        <button class="sim-tab" data-type="coin">
+                            <span class="tab-icon">🪙</span>
+                            <span>Coin</span>
+                        </button>
+                    </div>
+                    
+                    <!-- Dice Simulator -->
+                    <div class="dice-simulator">
+                        <div class="dice-container">
+                            <div class="dice">🎲</div>
+                            <div class="dice">🎲</div>
+                        </div>
+                        
+                        <button class="roll-btn">🎲 Roll Dice!</button>
+                        
+                        <div class="probability-stats">
+                            <div class="prob-stat">
+                                <div class="dice-face">⚀</div>
+                                <div class="count">0</div>
+                                <div class="percent">0%</div>
+                            </div>
+                            <div class="prob-stat">
+                                <div class="dice-face">⚁</div>
+                                <div class="count">0</div>
+                                <div class="percent">0%</div>
+                            </div>
+                            <div class="prob-stat">
+                                <div class="dice-face">⚂</div>
+                                <div class="count">0</div>
+                                <div class="percent">0%</div>
+                            </div>
+                            <div class="prob-stat">
+                                <div class="dice-face">⚃</div>
+                                <div class="count">0</div>
+                                <div class="percent">0%</div>
+                            </div>
+                            <div class="prob-stat">
+                                <div class="dice-face">⚄</div>
+                                <div class="count">0</div>
+                                <div class="percent">0%</div>
+                            </div>
+                            <div class="prob-stat">
+                                <div class="dice-face">⚅</div>
+                                <div class="count">0</div>
+                                <div class="percent">0%</div>
+                            </div>
+                        </div>
+                        
+                        <button class="reset-sim">Reset Statistics</button>
+                    </div>
+                    
+                    <!-- Coin Simulator -->
+                    <div class="coin-simulator hidden">
+                        <div class="coin-container">
+                            <div class="coin">?</div>
+                        </div>
+                        
+                        <button class="roll-btn">🪙 Flip Coin!</button>
+                        
+                        <div class="coin-stats">
+                            <div class="coin-stat heads">
+                                <div class="face">👑</div>
+                                <div class="label">Heads</div>
+                                <div class="count">0</div>
+                                <div class="percent">0%</div>
+                            </div>
+                            <div class="coin-stat tails">
+                                <div class="face">🦅</div>
+                                <div class="label">Tails</div>
+                                <div class="count">0</div>
+                                <div class="percent">0%</div>
+                            </div>
+                        </div>
+                        
+                        <button class="reset-sim">Reset Statistics</button>
+                    </div>
+                </div>
+
+                <!-- Original Mean Calculator -->
                 <div class="lesson-card">
-                    <h3>Interactive: Calculate the Mean</h3>
+                    <h3>🧮 Quick Mean Calculator</h3>
                     
                     <div class="mean-calculator">
                         <p>Enter numbers separated by commas:</p>
@@ -334,9 +522,10 @@
                     </div>
                 </div>
 
+                <!-- Probability Concepts -->
                 <div class="lesson-card">
-                    <h3>Probability</h3>
-                    <p><strong>Probability</strong> measures how likely an event is to happen.</p>
+                    <h3>🎯 Understanding Probability</h3>
+                    <p><strong>Probability</strong> measures how likely an event is to happen, from 0 (impossible) to 1 (certain).</p>
                     
                     <div class="formula-box">
                         <span class="formula">Probability = Favorable outcomes ÷ Total possible outcomes</span>
@@ -356,16 +545,43 @@
                         <h4>Probability Scale</h4>
                         <div class="scale-visual">
                             <div class="scale-bar">
-                                <span class="scale-point" style="left: 0%;">0<br><small>Impossible</small></span>
-                                <span class="scale-point" style="left: 25%;">0.25<br><small>Unlikely</small></span>
-                                <span class="scale-point" style="left: 50%;">0.5<br><small>Even chance</small></span>
-                                <span class="scale-point" style="left: 75%;">0.75<br><small>Likely</small></span>
-                                <span class="scale-point" style="left: 100%;">1<br><small>Certain</small></span>
+                                <span class="scale-point" style="left: 0%;">0<small>Impossible</small></span>
+                                <span class="scale-point" style="left: 25%;">0.25<small>Unlikely</small></span>
+                                <span class="scale-point" style="left: 50%;">0.5<small>Even</small></span>
+                                <span class="scale-point" style="left: 75%;">0.75<small>Likely</small></span>
+                                <span class="scale-point" style="left: 100%;">1<small>Certain</small></span>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
+
+            <!-- Achievements Section -->
+            <div class="achievements-section">
+                <h3>🏆 Your Achievements</h3>
+                <div class="badges-container">
+                    <div class="badge" data-achievement="first-solve">
+                        <span class="badge-icon">🎯</span>
+                        <span class="badge-name">First Steps</span>
+                    </div>
+                    <div class="badge" data-achievement="streak-5">
+                        <span class="badge-icon">🔥</span>
+                        <span class="badge-name">On Fire!</span>
+                    </div>
+                    <div class="badge" data-achievement="solver-10">
+                        <span class="badge-icon">🧮</span>
+                        <span class="badge-name">Problem Solver</span>
+                    </div>
+                    <div class="badge" data-achievement="dice-master">
+                        <span class="badge-icon">🎲</span>
+                        <span class="badge-name">Dice Master</span>
+                    </div>
+                    <div class="badge" data-achievement="streak-10">
+                        <span class="badge-icon">⚡</span>
+                        <span class="badge-name">Unstoppable!</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 
@@ -403,5 +619,6 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script src="js/mathematics.js"></script>
 </body>
 </html>
