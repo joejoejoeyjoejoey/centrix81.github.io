@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engineering | STEM Learning Hub</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🔬</span>
+                <span class="logo-text">STEM Hub</span>
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="science.html" class="nav-link">Science</a></li>
+                <li><a href="technology.html" class="nav-link">Technology</a></li>
+                <li><a href="engineering.html" class="nav-link active">Engineering</a></li>
+                <li><a href="mathematics.html" class="nav-link">Mathematics</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header engineering-header">
+        <div class="container">
+            <div class="page-header-content">
+                <span class="page-icon">⚙️</span>
+                <h1>Engineering</h1>
+                <p>Learn to design, build, and solve real-world problems through creative thinking and innovation.</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Topic Navigation -->
+            <div class="topic-nav">
+                <button class="topic-btn active" data-topic="design">Design Process</button>
+                <button class="topic-btn" data-topic="machines">Simple Machines</button>
+                <button class="topic-btn" data-topic="structures">Structures</button>
+            </div>
+
+            <!-- Design Process Section -->
+            <section id="design" class="topic-section active">
+                <h2 class="topic-title">🎨 The Engineering Design Process</h2>
+                
+                <div class="lesson-card">
+                    <h3>What Do Engineers Do?</h3>
+                    <p>Engineers are creative problem-solvers who design and build solutions to real-world challenges. They follow a systematic approach called the <strong>Engineering Design Process</strong>.</p>
+                </div>
+
+                <div class="lesson-card">
+                    <h3>The Design Process Steps</h3>
+                    
+                    <div class="design-process">
+                        <div class="design-step">
+                            <div class="step-circle">1</div>
+                            <div class="step-content">
+                                <h4>🔍 Ask / Identify the Problem</h4>
+                                <p>What problem are you trying to solve? Who is it for? What are the constraints?</p>
+                            </div>
+                        </div>
+                        <div class="design-step">
+                            <div class="step-circle">2</div>
+                            <div class="step-content">
+                                <h4>📚 Research</h4>
+                                <p>Learn about similar solutions. What has worked before? What hasn't?</p>
+                            </div>
+                        </div>
+                        <div class="design-step">
+                            <div class="step-circle">3</div>
+                            <div class="step-content">
+                                <h4>💡 Imagine / Brainstorm</h4>
+                                <p>Come up with as many ideas as possible. No idea is too crazy!</p>
+                            </div>
+                        </div>
+                        <div class="design-step">
+                            <div class="step-circle">4</div>
+                            <div class="step-content">
+                                <h4>📝 Plan</h4>
+                                <p>Choose the best idea and create detailed plans and sketches.</p>
+                            </div>
+                        </div>
+                        <div class="design-step">
+                            <div class="step-circle">5</div>
+                            <div class="step-content">
+                                <h4>🔨 Create / Build</h4>
+                                <p>Build a prototype - a working model of your solution.</p>
+                            </div>
+                        </div>
+                        <div class="design-step">
+                            <div class="step-circle">6</div>
+                            <div class="step-content">
+                                <h4>🧪 Test</h4>
+                                <p>Try out your prototype. Does it work? What could be better?</p>
+                            </div>
+                        </div>
+                        <div class="design-step">
+                            <div class="step-circle">7</div>
+                            <div class="step-content">
+                                <h4>🔄 Improve</h4>
+                                <p>Based on testing, make your design better. Then test again!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-card">
+                    <h3>Types of Engineers</h3>
+                    
+                    <div class="engineer-types">
+                        <div class="engineer-card">
+                            <div class="engineer-icon">🏗️</div>
+                            <h4>Civil Engineer</h4>
+                            <p>Designs roads, bridges, buildings, and infrastructure</p>
+                        </div>
+                        <div class="engineer-card">
+                            <div class="engineer-icon">⚡</div>
+                            <h4>Electrical Engineer</h4>
+                            <p>Works with electricity, circuits, and electronic devices</p>
+                        </div>
+                        <div class="engineer-card">
+                            <div class="engineer-icon">🔧</div>
+                            <h4>Mechanical Engineer</h4>
+                            <p>Designs machines, engines, and moving parts</p>
+                        </div>
+                        <div class="engineer-card">
+                            <div class="engineer-icon">🧪</div>
+                            <h4>Chemical Engineer</h4>
+                            <p>Creates new materials, medicines, and chemical processes</p>
+                        </div>
+                        <div class="engineer-card">
+                            <div class="engineer-icon">💻</div>
+                            <h4>Software Engineer</h4>
+                            <p>Develops apps, games, and computer programs</p>
+                        </div>
+                        <div class="engineer-card">
+                            <div class="engineer-icon">🌱</div>
+                            <h4>Environmental Engineer</h4>
+                            <p>Protects the environment and develops sustainable solutions</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Simple Machines Section -->
+            <section id="machines" class="topic-section">
+                <h2 class="topic-title">🔧 Simple Machines</h2>
+                
+                <div class="lesson-card">
+                    <h3>What Are Simple Machines?</h3>
+                    <p>Simple machines are basic mechanical devices that make work easier by changing the direction or magnitude of a force. There are <strong>six types</strong> of simple machines:</p>
+                </div>
+
+                <div class="machines-grid">
+                    <div class="machine-card">
+                        <div class="machine-icon">🎚️</div>
+                        <h4>Lever</h4>
+                        <p>A rigid bar that rotates around a fixed point (fulcrum).</p>
+                        <div class="machine-example">
+                            <strong>Examples:</strong> Seesaw, crowbar, scissors
+                        </div>
+                        <div class="machine-diagram">
+                            <span>Effort</span> ⟺ 🔺 ⟺ <span>Load</span>
+                        </div>
+                    </div>
+
+                    <div class="machine-card">
+                        <div class="machine-icon">🔘</div>
+                        <h4>Wheel and Axle</h4>
+                        <p>A wheel attached to a smaller rod (axle) that rotate together.</p>
+                        <div class="machine-example">
+                            <strong>Examples:</strong> Bicycle, doorknob, steering wheel
+                        </div>
+                    </div>
+
+                    <div class="machine-card">
+                        <div class="machine-icon">🅾️</div>
+                        <h4>Pulley</h4>
+                        <p>A wheel with a groove for a rope, used to lift heavy loads.</p>
+                        <div class="machine-example">
+                            <strong>Examples:</strong> Flagpole, crane, blinds
+                        </div>
+                    </div>
+
+                    <div class="machine-card">
+                        <div class="machine-icon">📐</div>
+                        <h4>Inclined Plane</h4>
+                        <p>A flat surface set at an angle (ramp) to help move objects up or down.</p>
+                        <div class="machine-example">
+                            <strong>Examples:</strong> Ramp, slide, stairs
+                        </div>
+                    </div>
+
+                    <div class="machine-card">
+                        <div class="machine-icon">🔪</div>
+                        <h4>Wedge</h4>
+                        <p>Two inclined planes joined together, used to split or separate objects.</p>
+                        <div class="machine-example">
+                            <strong>Examples:</strong> Knife, axe, doorstop
+                        </div>
+                    </div>
+
+                    <div class="machine-card">
+                        <div class="machine-icon">🔩</div>
+                        <h4>Screw</h4>
+                        <p>An inclined plane wrapped around a cylinder.</p>
+                        <div class="machine-example">
+                            <strong>Examples:</strong> Jar lid, light bulb, drill bit
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-card">
+                    <h3>Mechanical Advantage</h3>
+                    <p><strong>Mechanical Advantage (MA)</strong> tells us how much a machine multiplies the force we put in.</p>
+                    
+                    <div class="formula-box">
+                        <span class="formula">MA = Output Force ÷ Input Force</span>
+                    </div>
+                    
+                    <div class="example-box">
+                        <h4>Example:</h4>
+                        <p>If you push with 10N and the machine produces 50N of force, the MA = 50 ÷ 10 = <strong>5</strong></p>
+                        <p>This means the machine multiplies your force by 5!</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Structures Section -->
+            <section id="structures" class="topic-section">
+                <h2 class="topic-title">🏗️ Structures & Forces</h2>
+                
+                <div class="lesson-card">
+                    <h3>What Makes Structures Strong?</h3>
+                    <p>Engineers must understand forces to build structures that can withstand loads without failing.</p>
+                    
+                    <div class="forces-grid">
+                        <div class="force-card">
+                            <div class="force-visual compression">→ 🟦 ←</div>
+                            <h4>Compression</h4>
+                            <p>A pushing force that squeezes an object together</p>
+                        </div>
+                        <div class="force-card">
+                            <div class="force-visual tension">← 🟦 →</div>
+                            <h4>Tension</h4>
+                            <p>A pulling force that stretches an object apart</p>
+                        </div>
+                        <div class="force-card">
+                            <div class="force-visual shear">↑🟦↓</div>
+                            <h4>Shear</h4>
+                            <p>Forces pushing in opposite directions, sliding past each other</p>
+                        </div>
+                        <div class="force-card">
+                            <div class="force-visual torsion">↻🟦↺</div>
+                            <h4>Torsion</h4>
+                            <p>A twisting force</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-card">
+                    <h3>Strong Shapes in Engineering</h3>
+                    
+                    <div class="shapes-showcase">
+                        <div class="shape-card">
+                            <div class="shape-icon">🔺</div>
+                            <h4>Triangle</h4>
+                            <p>The strongest shape! Triangles can't be deformed without breaking a side. That's why bridges use them!</p>
+                        </div>
+                        <div class="shape-card">
+                            <div class="shape-icon">⭕</div>
+                            <h4>Arch</h4>
+                            <p>Distributes weight evenly to the sides. Used in bridges, doorways, and domes for thousands of years.</p>
+                        </div>
+                        <div class="shape-card">
+                            <div class="shape-icon">🔶</div>
+                            <h4>Dome</h4>
+                            <p>A 3D arch that spreads forces in all directions. Strong and uses less material.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-card project-card">
+                    <h3>🎯 Engineering Challenge</h3>
+                    <p>Try this at home to understand structural engineering!</p>
+                    
+                    <div class="challenge-content">
+                        <h4>Paper Tower Challenge</h4>
+                        <div class="challenge-details">
+                            <div class="challenge-materials">
+                                <h5>Materials:</h5>
+                                <ul>
+                                    <li>20 sheets of paper</li>
+                                    <li>1 meter of tape</li>
+                                    <li>Scissors</li>
+                                </ul>
+                            </div>
+                            <div class="challenge-goal">
+                                <h5>Goal:</h5>
+                                <p>Build the tallest tower that can support a textbook for 10 seconds!</p>
+                            </div>
+                        </div>
+                        <div class="challenge-tips">
+                            <h5>💡 Tips:</h5>
+                            <ul>
+                                <li>Roll paper into tubes for stronger columns</li>
+                                <li>Use triangles for stability</li>
+                                <li>Build a wide base</li>
+                                <li>Test early and improve!</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">🔬</span>
+                    <span class="logo-text">STEM Hub</span>
+                    <p>Making STEM education accessible and fun for 8th graders everywhere.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="science.html">Science</a></li>
+                        <li><a href="technology.html">Technology</a></li>
+                        <li><a href="engineering.html">Engineering</a></li>
+                        <li><a href="mathematics.html">Mathematics</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Study Tips</a></li>
+                        <li><a href="#">Practice Problems</a></li>
+                        <li><a href="#">Video Tutorials</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 STEM Learning Hub. Made with ❤️ for students.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
