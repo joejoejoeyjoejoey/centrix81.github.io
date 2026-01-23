@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Science | STEM Learning Hub</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🔬</span>
+                <span class="logo-text">STEM Hub</span>
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="science.html" class="nav-link active">Science</a></li>
+                <li><a href="technology.html" class="nav-link">Technology</a></li>
+                <li><a href="engineering.html" class="nav-link">Engineering</a></li>
+                <li><a href="mathematics.html" class="nav-link">Mathematics</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header science-header">
+        <div class="container">
+            <div class="page-header-content">
+                <span class="page-icon">🔬</span>
+                <h1>Science</h1>
+                <p>Explore the natural world and understand how things work through observation and experimentation.</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Topic Navigation -->
+            <div class="topic-nav">
+                <button class="topic-btn active" data-topic="physics">Physics</button>
+                <button class="topic-btn" data-topic="chemistry">Chemistry</button>
+                <button class="topic-btn" data-topic="biology">Biology</button>
+            </div>
+
+            <!-- Physics Section -->
+            <section id="physics" class="topic-section active">
+                <h2 class="topic-title">⚡ Physics: Forces and Motion</h2>
+                
+                <div class="lesson-card">
+                    <h3>What is a Force?</h3>
+                    <p>A <strong>force</strong> is a push or pull on an object. Forces can make objects:</p>
+                    <ul class="concept-list">
+                        <li>Start moving</li>
+                        <li>Stop moving</li>
+                        <li>Change direction</li>
+                        <li>Change shape</li>
+                    </ul>
+                    
+                    <div class="example-box">
+                        <h4>🌟 Real-Life Example</h4>
+                        <p>When you kick a soccer ball, you apply a force that makes it move. The harder you kick (more force), the faster it goes!</p>
+                    </div>
+                </div>
+
+                <div class="lesson-card">
+                    <h3>Newton's Three Laws of Motion</h3>
+                    
+                    <div class="law-card">
+                        <div class="law-number">1st Law</div>
+                        <h4>Law of Inertia</h4>
+                        <p>An object at rest stays at rest, and an object in motion stays in motion, unless acted upon by a force.</p>
+                        <div class="example-box">
+                            <p>📱 Example: A book on a table won't move unless you push it. And once pushed, it would keep sliding forever if there was no friction!</p>
+                        </div>
+                    </div>
+
+                    <div class="law-card">
+                        <div class="law-number">2nd Law</div>
+                        <h4>Force = Mass × Acceleration</h4>
+                        <p>The acceleration of an object depends on the force applied and the object's mass.</p>
+                        <div class="formula-box">
+                            <span class="formula">F = m × a</span>
+                        </div>
+                        <div class="example-box">
+                            <p>🛒 Example: Pushing an empty shopping cart is easier than pushing a full one because it has less mass!</p>
+                        </div>
+                    </div>
+
+                    <div class="law-card">
+                        <div class="law-number">3rd Law</div>
+                        <h4>Action and Reaction</h4>
+                        <p>For every action, there is an equal and opposite reaction.</p>
+                        <div class="example-box">
+                            <p>🚀 Example: A rocket pushes hot gas downward, and the gas pushes the rocket upward!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Quiz -->
+                <div class="quiz-card">
+                    <h3>🎯 Quick Quiz: Test Your Knowledge!</h3>
+                    <div class="quiz-question">
+                        <p><strong>Question:</strong> If you push a box with a force of 10N and it accelerates at 2 m/s², what is its mass?</p>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="physics-q1" value="2">
+                                <span>2 kg</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="physics-q1" value="5">
+                                <span>5 kg</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="physics-q1" value="20">
+                                <span>20 kg</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="physics-q1" value="12">
+                                <span>12 kg</span>
+                            </label>
+                        </div>
+                        <button class="btn btn-primary check-answer" data-correct="5">Check Answer</button>
+                        <div class="quiz-feedback"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Chemistry Section -->
+            <section id="chemistry" class="topic-section">
+                <h2 class="topic-title">🧪 Chemistry: Matter and Reactions</h2>
+                
+                <div class="lesson-card">
+                    <h3>States of Matter</h3>
+                    <p>All matter exists in one of three main states:</p>
+                    
+                    <div class="states-grid">
+                        <div class="state-card">
+                            <div class="state-icon">🧊</div>
+                            <h4>Solid</h4>
+                            <p>Particles are tightly packed and vibrate in place.</p>
+                            <p class="state-example">Examples: Ice, wood, metal</p>
+                        </div>
+                        <div class="state-card">
+                            <div class="state-icon">💧</div>
+                            <h4>Liquid</h4>
+                            <p>Particles are close but can slide past each other.</p>
+                            <p class="state-example">Examples: Water, oil, juice</p>
+                        </div>
+                        <div class="state-card">
+                            <div class="state-icon">💨</div>
+                            <h4>Gas</h4>
+                            <p>Particles are spread apart and move freely.</p>
+                            <p class="state-example">Examples: Air, steam, helium</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-card">
+                    <h3>The Periodic Table</h3>
+                    <p>The periodic table organizes all known elements by their properties. Here are some important elements:</p>
+                    
+                    <div class="elements-showcase">
+                        <div class="element-card" style="--element-color: #ff6b6b;">
+                            <span class="element-number">1</span>
+                            <span class="element-symbol">H</span>
+                            <span class="element-name">Hydrogen</span>
+                        </div>
+                        <div class="element-card" style="--element-color: #ffd93d;">
+                            <span class="element-number">6</span>
+                            <span class="element-symbol">C</span>
+                            <span class="element-name">Carbon</span>
+                        </div>
+                        <div class="element-card" style="--element-color: #6bcb77;">
+                            <span class="element-number">8</span>
+                            <span class="element-symbol">O</span>
+                            <span class="element-name">Oxygen</span>
+                        </div>
+                        <div class="element-card" style="--element-color: #4d96ff;">
+                            <span class="element-number">26</span>
+                            <span class="element-symbol">Fe</span>
+                            <span class="element-name">Iron</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-card">
+                    <h3>Chemical Reactions</h3>
+                    <p>A chemical reaction occurs when substances combine or break apart to form new substances.</p>
+                    
+                    <div class="reaction-example">
+                        <h4>Photosynthesis</h4>
+                        <div class="reaction-equation">
+                            <span class="reactant">6CO₂ + 6H₂O</span>
+                            <span class="arrow">→</span>
+                            <span class="product">C₆H₁₂O₆ + 6O₂</span>
+                        </div>
+                        <p class="reaction-words">Carbon Dioxide + Water → Glucose + Oxygen</p>
+                        <p class="reaction-description">Plants use sunlight to convert carbon dioxide and water into sugar and oxygen!</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Biology Section -->
+            <section id="biology" class="topic-section">
+                <h2 class="topic-title">🧬 Biology: Life and Living Things</h2>
+                
+                <div class="lesson-card">
+                    <h3>The Cell: Building Block of Life</h3>
+                    <p>All living things are made of cells. There are two main types:</p>
+                    
+                    <div class="cell-comparison">
+                        <div class="cell-type">
+                            <h4>🦠 Prokaryotic Cells</h4>
+                            <ul>
+                                <li>No nucleus</li>
+                                <li>Simple structure</li>
+                                <li>Bacteria are prokaryotes</li>
+                            </ul>
+                        </div>
+                        <div class="cell-type">
+                            <h4>🔬 Eukaryotic Cells</h4>
+                            <ul>
+                                <li>Has a nucleus</li>
+                                <li>Complex organelles</li>
+                                <li>Animals, plants, fungi</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-card">
+                    <h3>Cell Organelles</h3>
+                    <p>Each part of a cell has a specific job, like workers in a factory:</p>
+                    
+                    <div class="organelle-grid">
+                        <div class="organelle-card">
+                            <div class="organelle-icon">🧠</div>
+                            <h4>Nucleus</h4>
+                            <p>The "brain" - contains DNA and controls the cell</p>
+                        </div>
+                        <div class="organelle-card">
+                            <div class="organelle-icon">🔋</div>
+                            <h4>Mitochondria</h4>
+                            <p>The "powerhouse" - produces energy (ATP)</p>
+                        </div>
+                        <div class="organelle-card">
+                            <div class="organelle-icon">🏭</div>
+                            <h4>Ribosomes</h4>
+                            <p>The "factory" - makes proteins</p>
+                        </div>
+                        <div class="organelle-card">
+                            <div class="organelle-icon">🚚</div>
+                            <h4>Endoplasmic Reticulum</h4>
+                            <p>The "highway" - transports materials</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-card">
+                    <h3>DNA: The Code of Life</h3>
+                    <p><strong>DNA (Deoxyribonucleic Acid)</strong> is the molecule that carries genetic information.</p>
+                    
+                    <div class="dna-info">
+                        <div class="dna-visual">🧬</div>
+                        <div class="dna-facts">
+                            <h4>Key Facts:</h4>
+                            <ul>
+                                <li>Shaped like a twisted ladder (double helix)</li>
+                                <li>Made of 4 bases: A, T, G, C</li>
+                                <li>A pairs with T, G pairs with C</li>
+                                <li>Contains instructions for making proteins</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">🔬</span>
+                    <span class="logo-text">STEM Hub</span>
+                    <p>Making STEM education accessible and fun for 8th graders everywhere.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="science.html">Science</a></li>
+                        <li><a href="technology.html">Technology</a></li>
+                        <li><a href="engineering.html">Engineering</a></li>
+                        <li><a href="mathematics.html">Mathematics</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Study Tips</a></li>
+                        <li><a href="#">Practice Problems</a></li>
+                        <li><a href="#">Video Tutorials</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 STEM Learning Hub. Made with ❤️ for students.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
