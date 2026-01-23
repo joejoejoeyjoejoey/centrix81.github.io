@@ -1,0 +1,1486 @@
+/* =========================================
+   Mathematics Page - Enhanced Styles
+   Interactive and engaging for 8th graders
+   ========================================= */
+
+/* =========================================
+   Topic Navigation Enhancements
+   ========================================= */
+.topic-nav {
+    position: relative;
+    background: var(--bg-secondary);
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-xl);
+    display: inline-flex;
+    margin-bottom: var(--spacing-2xl);
+}
+
+.topic-btn {
+    position: relative;
+    z-index: 1;
+    padding: var(--spacing-md) var(--spacing-xl);
+    background: transparent;
+    border-radius: var(--radius-lg);
+    font-weight: 500;
+    color: var(--text-secondary);
+    transition: all var(--transition-fast);
+}
+
+.topic-btn:hover {
+    color: var(--text-primary);
+}
+
+.topic-btn.active {
+    background: var(--primary-color);
+    color: white;
+    box-shadow: var(--shadow-md);
+}
+
+/* =========================================
+   Interactive Math Tools
+   ========================================= */
+
+/* Tool Container */
+.math-tool {
+    background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    margin: var(--spacing-xl) 0;
+    border: 2px solid var(--border-color);
+    transition: all var(--transition-base);
+}
+
+.math-tool:hover {
+    border-color: var(--mathematics-color);
+    box-shadow: var(--shadow-lg);
+}
+
+.math-tool h3 {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+    color: var(--text-primary);
+}
+
+.tool-icon {
+    font-size: 1.5rem;
+}
+
+/* =========================================
+   Equation Solver
+   ========================================= */
+.equation-solver {
+    background: var(--bg-primary);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+}
+
+.equation-input-group {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+    flex-wrap: wrap;
+}
+
+.equation-input {
+    flex: 1;
+    min-width: 200px;
+    padding: var(--spacing-md) var(--spacing-lg);
+    font-size: var(--font-size-lg);
+    font-family: 'Courier New', monospace;
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    background: var(--bg-secondary);
+    transition: all var(--transition-fast);
+}
+
+.equation-input:focus {
+    outline: none;
+    border-color: var(--mathematics-color);
+    background: var(--bg-primary);
+    box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.1);
+}
+
+.equation-input.error {
+    border-color: var(--mathematics-color);
+    animation: shake 0.5s ease;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-5px); }
+    40%, 80% { transform: translateX(5px); }
+}
+
+.solve-btn {
+    background: var(--mathematics-color);
+    color: white;
+    padding: var(--spacing-md) var(--spacing-2xl);
+    border-radius: var(--radius-lg);
+    font-weight: 600;
+    font-size: var(--font-size-base);
+    transition: all var(--transition-fast);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.solve-btn:hover {
+    background: #dc2626;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.solve-btn:active {
+    transform: translateY(0);
+}
+
+/* Solution Steps */
+.solution-display {
+    margin-top: var(--spacing-lg);
+}
+
+.solution-display.hidden {
+    display: none;
+}
+
+.solution-steps {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.step {
+    display: flex;
+    gap: var(--spacing-lg);
+    align-items: center;
+    padding: var(--spacing-md);
+    background: var(--bg-secondary);
+    border-radius: var(--radius-md);
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: slideIn 0.3s ease forwards;
+}
+
+.step:nth-child(1) { animation-delay: 0.1s; }
+.step:nth-child(2) { animation-delay: 0.2s; }
+.step:nth-child(3) { animation-delay: 0.3s; }
+.step:nth-child(4) { animation-delay: 0.4s; }
+.step:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.step-number {
+    width: 28px;
+    height: 28px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.step-equation {
+    font-family: 'Courier New', monospace;
+    font-weight: 600;
+    font-size: var(--font-size-lg);
+    min-width: 180px;
+    color: var(--text-primary);
+}
+
+.step-explanation {
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+}
+
+.step.final {
+    background: linear-gradient(135deg, var(--mathematics-color) 0%, #dc2626 100%);
+    color: white;
+}
+
+.step.final .step-number {
+    background: white;
+    color: var(--mathematics-color);
+}
+
+.step.final .step-equation,
+.step.final .step-explanation {
+    color: white;
+}
+
+/* Quick Examples */
+.quick-examples {
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--border-color);
+}
+
+.quick-examples p {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.example-buttons {
+    display: flex;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+}
+
+.example-btn {
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-md);
+    font-family: 'Courier New', monospace;
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    transition: all var(--transition-fast);
+}
+
+.example-btn:hover {
+    background: var(--mathematics-color);
+    color: white;
+}
+
+/* =========================================
+   Interactive PEMDAS
+   ========================================= */
+.pemdas-interactive {
+    background: var(--bg-primary);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+}
+
+.pemdas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: var(--spacing-md);
+    margin: var(--spacing-lg) 0;
+}
+
+.pemdas-item {
+    background: var(--bg-secondary);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    transition: all var(--transition-fast);
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.pemdas-item:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.pemdas-item.active {
+    border-color: var(--mathematics-color);
+    background: rgba(239, 68, 68, 0.1);
+}
+
+.pemdas-item.highlight {
+    animation: pulse 0.5s ease;
+    background: rgba(239, 68, 68, 0.2);
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.pemdas-letter {
+    display: block;
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: var(--mathematics-color);
+}
+
+.pemdas-word {
+    display: block;
+    font-weight: 500;
+    font-size: var(--font-size-sm);
+    margin: var(--spacing-xs) 0;
+}
+
+.pemdas-example {
+    display: block;
+    font-family: monospace;
+    color: var(--text-light);
+    font-size: var(--font-size-sm);
+}
+
+/* PEMDAS Evaluator */
+.pemdas-evaluator {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.expression-display {
+    font-family: 'Courier New', monospace;
+    font-size: var(--font-size-2xl);
+    text-align: center;
+    padding: var(--spacing-lg);
+    background: var(--bg-primary);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-lg);
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+}
+
+.expression-display .highlight-op {
+    background: var(--mathematics-color);
+    color: white;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    animation: highlightPulse 0.5s ease infinite alternate;
+}
+
+@keyframes highlightPulse {
+    from { opacity: 0.8; }
+    to { opacity: 1; }
+}
+
+.step-controls {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+}
+
+.step-btn {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--radius-md);
+    font-weight: 500;
+    transition: all var(--transition-fast);
+}
+
+.step-btn.primary {
+    background: var(--mathematics-color);
+    color: white;
+}
+
+.step-btn.primary:hover {
+    background: #dc2626;
+}
+
+.step-btn.secondary {
+    background: var(--bg-tertiary);
+    color: var(--text-secondary);
+}
+
+.step-btn.secondary:hover {
+    background: var(--border-color);
+}
+
+/* =========================================
+   Practice Problem Generator
+   ========================================= */
+.practice-generator {
+    background: linear-gradient(135deg, var(--mathematics-color) 0%, #dc2626 100%);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    color: white;
+}
+
+.practice-generator h3 {
+    color: white;
+}
+
+.difficulty-selector {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+    flex-wrap: wrap;
+}
+
+.difficulty-btn {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border-radius: var(--radius-full);
+    font-weight: 500;
+    transition: all var(--transition-fast);
+}
+
+.difficulty-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.difficulty-btn.active {
+    background: white;
+    color: var(--mathematics-color);
+}
+
+.problem-area {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.problem-display {
+    font-family: 'Courier New', monospace;
+    font-size: var(--font-size-3xl);
+    margin-bottom: var(--spacing-lg);
+}
+
+.answer-section {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.answer-field {
+    padding: var(--spacing-md) var(--spacing-lg);
+    font-size: var(--font-size-xl);
+    font-family: 'Courier New', monospace;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    width: 120px;
+    text-align: center;
+}
+
+.answer-field::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.answer-field:focus {
+    outline: none;
+    border-color: white;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.submit-answer {
+    padding: var(--spacing-md) var(--spacing-xl);
+    background: white;
+    color: var(--mathematics-color);
+    border-radius: var(--radius-md);
+    font-weight: 600;
+}
+
+.submit-answer:hover {
+    background: var(--bg-secondary);
+    transform: translateY(-2px);
+}
+
+.feedback-area {
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+}
+
+.feedback-area.correct {
+    color: #4ade80;
+}
+
+.feedback-area.incorrect {
+    color: #fbbf24;
+}
+
+/* Stats Bar */
+.stats-bar {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-2xl);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-value {
+    display: block;
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+}
+
+.stat-label {
+    font-size: var(--font-size-sm);
+    opacity: 0.8;
+}
+
+/* =========================================
+   Shape Calculator
+   ========================================= */
+.shape-calculator {
+    background: var(--bg-primary);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+}
+
+.shape-selector {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+    flex-wrap: wrap;
+}
+
+.shape-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-lg);
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-fast);
+    min-width: 100px;
+    border: 2px solid transparent;
+}
+
+.shape-btn:hover {
+    background: var(--bg-tertiary);
+    transform: translateY(-3px);
+}
+
+.shape-btn.active {
+    border-color: var(--mathematics-color);
+    background: rgba(239, 68, 68, 0.1);
+}
+
+.shape-icon {
+    font-size: 2.5rem;
+}
+
+.shape-btn span:last-child {
+    font-weight: 500;
+    font-size: var(--font-size-sm);
+}
+
+/* Calculator Body */
+.calculator-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+}
+
+@media (max-width: 768px) {
+    .calculator-body {
+        grid-template-columns: 1fr;
+    }
+}
+
+.input-section {
+    background: var(--bg-secondary);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+}
+
+.input-group {
+    margin-bottom: var(--spacing-md);
+}
+
+.input-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: var(--spacing-xs);
+    color: var(--text-secondary);
+}
+
+.dimension-input {
+    width: 100%;
+    padding: var(--spacing-md);
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-base);
+    transition: all var(--transition-fast);
+}
+
+.dimension-input:focus {
+    outline: none;
+    border-color: var(--mathematics-color);
+}
+
+/* Visual Section */
+.visual-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-secondary);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+}
+
+.shape-visual-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.animated-shape {
+    transition: all var(--transition-base);
+}
+
+.animated-shape.rectangle {
+    width: 150px;
+    height: 100px;
+    background: linear-gradient(135deg, var(--mathematics-color) 0%, #f87171 100%);
+    border-radius: var(--radius-sm);
+}
+
+.animated-shape.triangle {
+    width: 0;
+    height: 0;
+    border-left: 75px solid transparent;
+    border-right: 75px solid transparent;
+    border-bottom: 130px solid var(--mathematics-color);
+}
+
+.animated-shape.circle {
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(135deg, var(--mathematics-color) 0%, #f87171 100%);
+    border-radius: 50%;
+}
+
+/* Results Display */
+.results-display {
+    width: 100%;
+}
+
+.result-row {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--spacing-sm);
+    background: var(--bg-primary);
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--spacing-xs);
+}
+
+.result-row .label {
+    color: var(--text-secondary);
+}
+
+.result-row .value {
+    font-weight: 600;
+    color: var(--mathematics-color);
+    font-family: 'Courier New', monospace;
+}
+
+/* =========================================
+   Pythagorean Theorem Visualizer
+   ========================================= */
+.pythagorean-visualizer {
+    background: var(--bg-primary);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+}
+
+.visualizer-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .visualizer-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.triangle-visual {
+    position: relative;
+    width: 280px;
+    height: 280px;
+    margin: 0 auto;
+}
+
+.triangle-svg {
+    width: 100%;
+    height: 100%;
+}
+
+.triangle-svg .triangle-path {
+    fill: rgba(239, 68, 68, 0.1);
+    stroke: var(--mathematics-color);
+    stroke-width: 3;
+}
+
+.triangle-svg .square-a,
+.triangle-svg .square-b,
+.triangle-svg .square-c {
+    opacity: 0.3;
+    transition: opacity var(--transition-base);
+}
+
+.triangle-svg .square-a { fill: #3b82f6; }
+.triangle-svg .square-b { fill: #10b981; }
+.triangle-svg .square-c { fill: var(--mathematics-color); }
+
+.triangle-svg.show-squares .square-a,
+.triangle-svg.show-squares .square-b,
+.triangle-svg.show-squares .square-c {
+    opacity: 0.6;
+}
+
+.triangle-svg .side-label {
+    font-family: 'Courier New', monospace;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.pythagorean-controls {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.side-inputs {
+    display: grid;
+    gap: var(--spacing-md);
+}
+
+.side-input-group {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.side-label-box {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: white;
+    border-radius: var(--radius-md);
+}
+
+.side-label-box.a { background: #3b82f6; }
+.side-label-box.b { background: #10b981; }
+.side-label-box.c { background: var(--mathematics-color); }
+
+.side-input {
+    flex: 1;
+    padding: var(--spacing-md);
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-base);
+}
+
+.side-input:focus {
+    outline: none;
+    border-color: var(--mathematics-color);
+}
+
+.calculate-hypotenuse {
+    background: var(--mathematics-color);
+    color: white;
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    width: 100%;
+}
+
+.calculate-hypotenuse:hover {
+    background: #dc2626;
+}
+
+.theorem-result {
+    background: var(--bg-secondary);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    text-align: center;
+}
+
+.theorem-equation {
+    font-family: 'Courier New', monospace;
+    font-size: var(--font-size-xl);
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.theorem-explanation {
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+}
+
+.toggle-squares {
+    margin-top: var(--spacing-md);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-sm);
+}
+
+.toggle-squares:hover {
+    background: var(--border-color);
+}
+
+/* =========================================
+   Angle Explorer
+   ========================================= */
+.angle-explorer {
+    background: var(--bg-primary);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+}
+
+.angle-visualizer {
+    display: flex;
+    gap: var(--spacing-xl);
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.angle-canvas-container {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+#angleCanvas {
+    width: 100%;
+    height: 100%;
+}
+
+.angle-controls {
+    flex: 1;
+    min-width: 250px;
+}
+
+.angle-slider-group {
+    margin-bottom: var(--spacing-lg);
+}
+
+.angle-slider-group label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-sm);
+    font-weight: 500;
+}
+
+.angle-value {
+    color: var(--mathematics-color);
+    font-weight: 700;
+}
+
+.angle-slider {
+    width: 100%;
+    height: 8px;
+    -webkit-appearance: none;
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-full);
+    outline: none;
+}
+
+.angle-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 24px;
+    height: 24px;
+    background: var(--mathematics-color);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform var(--transition-fast);
+}
+
+.angle-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+}
+
+.angle-type-display {
+    background: var(--bg-secondary);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    text-align: center;
+}
+
+.angle-type-name {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--mathematics-color);
+    margin-bottom: var(--spacing-xs);
+}
+
+.angle-type-desc {
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+}
+
+/* Quick angle buttons */
+.quick-angles {
+    display: flex;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+    margin-top: var(--spacing-md);
+}
+
+.quick-angle-btn {
+    padding: var(--spacing-xs) var(--spacing-md);
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-sm);
+    transition: all var(--transition-fast);
+}
+
+.quick-angle-btn:hover {
+    background: var(--mathematics-color);
+    color: white;
+}
+
+/* =========================================
+   Statistics Calculator Enhanced
+   ========================================= */
+.stats-calculator {
+    background: var(--bg-primary);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+}
+
+.data-input-area {
+    margin-bottom: var(--spacing-xl);
+}
+
+.data-input-area label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: var(--spacing-sm);
+}
+
+.data-input {
+    width: 100%;
+    padding: var(--spacing-md);
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-base);
+    font-family: 'Courier New', monospace;
+}
+
+.data-input:focus {
+    outline: none;
+    border-color: var(--mathematics-color);
+}
+
+.data-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.random-data-btn {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-sm);
+}
+
+.random-data-btn:hover {
+    background: var(--border-color);
+}
+
+.stats-results {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+}
+
+.stat-card {
+    background: var(--bg-secondary);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    transition: all var(--transition-fast);
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.stat-card .stat-icon {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.stat-card .stat-label {
+    display: block;
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.stat-card .stat-value {
+    display: block;
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--mathematics-color);
+    font-family: 'Courier New', monospace;
+}
+
+/* Data Visualization */
+.data-visualization {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+}
+
+.chart-container {
+    height: 200px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md);
+}
+
+.chart-bar {
+    width: 30px;
+    background: linear-gradient(to top, var(--mathematics-color), #f87171);
+    border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+    transition: height var(--transition-base);
+    position: relative;
+}
+
+.chart-bar:hover {
+    background: linear-gradient(to top, #dc2626, var(--mathematics-color));
+}
+
+.chart-bar::after {
+    content: attr(data-value);
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+}
+
+/* =========================================
+   Probability Simulator
+   ========================================= */
+.probability-simulator {
+    background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+}
+
+.simulator-tabs {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-xl);
+}
+
+.sim-tab {
+    flex: 1;
+    padding: var(--spacing-md);
+    background: var(--bg-primary);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    font-weight: 500;
+    transition: all var(--transition-fast);
+    border: 2px solid transparent;
+}
+
+.sim-tab:hover {
+    border-color: var(--border-color);
+}
+
+.sim-tab.active {
+    background: var(--mathematics-color);
+    color: white;
+}
+
+.sim-tab .tab-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: var(--spacing-xs);
+}
+
+/* Dice Simulator */
+.dice-simulator,
+.coin-simulator {
+    background: var(--bg-primary);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+}
+
+.dice-container {
+    display: flex;
+    gap: var(--spacing-lg);
+    justify-content: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.dice {
+    width: 80px;
+    height: 80px;
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    transition: transform var(--transition-fast);
+}
+
+.dice.rolling {
+    animation: rollDice 0.5s ease;
+}
+
+@keyframes rollDice {
+    0% { transform: rotateX(0) rotateY(0); }
+    25% { transform: rotateX(90deg) rotateY(90deg); }
+    50% { transform: rotateX(180deg) rotateY(180deg); }
+    75% { transform: rotateX(270deg) rotateY(270deg); }
+    100% { transform: rotateX(360deg) rotateY(360deg); }
+}
+
+.roll-btn {
+    display: block;
+    margin: 0 auto var(--spacing-xl);
+    padding: var(--spacing-md) var(--spacing-2xl);
+    background: var(--mathematics-color);
+    color: white;
+    border-radius: var(--radius-lg);
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+}
+
+.roll-btn:hover {
+    background: #dc2626;
+    transform: translateY(-2px);
+}
+
+.probability-stats {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: var(--spacing-sm);
+}
+
+.prob-stat {
+    background: var(--bg-secondary);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    text-align: center;
+}
+
+.prob-stat .dice-face {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-xs);
+}
+
+.prob-stat .count {
+    font-weight: 700;
+    color: var(--mathematics-color);
+}
+
+.prob-stat .percent {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+}
+
+/* Coin Simulator */
+.coin-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.coin {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #ffd700, #ffb347);
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #8b6914;
+    transition: transform var(--transition-fast);
+}
+
+.coin.flipping {
+    animation: flipCoin 0.6s ease;
+}
+
+@keyframes flipCoin {
+    0% { transform: rotateY(0); }
+    100% { transform: rotateY(720deg); }
+}
+
+.coin-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.coin-stat {
+    background: var(--bg-secondary);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    text-align: center;
+}
+
+.coin-stat .face {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.coin-stat .count {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: var(--mathematics-color);
+}
+
+.coin-stat .percent {
+    color: var(--text-secondary);
+}
+
+/* Simulator Reset */
+.reset-sim {
+    display: block;
+    margin: var(--spacing-lg) auto 0;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-sm);
+}
+
+.reset-sim:hover {
+    background: var(--border-color);
+}
+
+/* =========================================
+   Achievement Badges
+   ========================================= */
+.achievements-section {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    margin-top: var(--spacing-2xl);
+}
+
+.achievements-section h3 {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+}
+
+.badges-container {
+    display: flex;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.badge {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--bg-primary);
+    border-radius: var(--radius-full);
+    border: 2px solid var(--border-color);
+    transition: all var(--transition-fast);
+    opacity: 0.5;
+}
+
+.badge.earned {
+    opacity: 1;
+    border-color: var(--mathematics-color);
+    background: rgba(239, 68, 68, 0.1);
+}
+
+.badge.earned .badge-icon {
+    animation: bounce 0.5s ease;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+.badge-icon {
+    font-size: 1.25rem;
+}
+
+.badge-name {
+    font-weight: 500;
+    font-size: var(--font-size-sm);
+}
+
+/* =========================================
+   Loading States
+   ========================================= */
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* =========================================
+   Toast Notifications
+   ========================================= */
+.toast-container {
+    position: fixed;
+    bottom: var(--spacing-xl);
+    right: var(--spacing-xl);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.toast {
+    background: var(--text-primary);
+    color: white;
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    animation: slideInRight 0.3s ease, fadeOut 0.3s ease 2.7s forwards;
+    max-width: 300px;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
+
+.toast.success {
+    background: var(--science-color);
+}
+
+.toast.error {
+    background: var(--mathematics-color);
+}
+
+.toast.info {
+    background: var(--technology-color);
+}
+
+.toast-icon {
+    font-size: 1.25rem;
+}
+
+/* =========================================
+   Responsive Adjustments
+   ========================================= */
+@media (max-width: 768px) {
+    .equation-input-group {
+        flex-direction: column;
+    }
+    
+    .visualizer-container,
+    .calculator-body {
+        grid-template-columns: 1fr;
+    }
+    
+    .triangle-visual {
+        width: 100%;
+        max-width: 280px;
+    }
+    
+    .probability-stats {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .step {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--spacing-sm);
+    }
+    
+    .step-equation {
+        min-width: auto;
+    }
+    
+    .answer-section {
+        flex-direction: column;
+    }
+    
+    .answer-field {
+        width: 100%;
+    }
+    
+    .toast-container {
+        left: var(--spacing-md);
+        right: var(--spacing-md);
+    }
+    
+    .toast {
+        max-width: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-bar {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+    
+    .badges-container {
+        justify-content: center;
+    }
+    
+    .difficulty-selector {
+        flex-direction: column;
+    }
+    
+    .difficulty-btn {
+        width: 100%;
+    }
+}
