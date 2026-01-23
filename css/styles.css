@@ -1787,4 +1787,369 @@ section {
 }
 
 .angle-type h4 {
+    margin-bottom: var(--spacing-sm);
+}
+
+.angle-type p {
+    font-size: var(--font-size-sm);
+    margin: 0;
+    color: var(--text-secondary);
+}
+
+/* Stats Measures */
+.stats-measures {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.measure-card {
+    background: var(--bg-secondary);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+}
+
+.measure-card h4 {
+    margin-bottom: var(--spacing-sm);
+}
+
+.measure-card > p {
+    margin-bottom: var(--spacing-md);
+    font-size: var(--font-size-sm);
+}
+
+/* Mean Calculator */
+.mean-calculator {
+    background: var(--bg-secondary);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.calc-input-group {
+    display: flex;
+    gap: var(--spacing-md);
+    margin: var(--spacing-md) 0;
+    flex-wrap: wrap;
+}
+
+.calc-input-group input {
+    flex: 1;
+    min-width: 200px;
+    padding: var(--spacing-md);
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-base);
+}
+
+.calc-input-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.calc-results {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+}
+
+.result-item {
+    background: var(--bg-primary);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    text-align: center;
+}
+
+.result-item .result-label {
+    display: block;
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.result-item .result-value {
+    display: block;
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* Probability Examples */
+.probability-examples {
+    background: var(--bg-secondary);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    margin: var(--spacing-lg) 0;
+}
+
+.probability-examples h4 {
+    margin-bottom: var(--spacing-md);
+}
+
+.probability-examples ul {
+    margin-left: var(--spacing-lg);
+}
+
+.probability-examples li {
+    position: relative;
+    padding: var(--spacing-xs) 0;
+}
+
+.probability-examples li::before {
+    content: '•';
+    position: absolute;
+    left: -1rem;
+    color: var(--mathematics-color);
+}
+
+/* Probability Scale */
+.probability-scale {
+    margin-top: var(--spacing-xl);
+}
+
+.probability-scale h4 {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.scale-visual {
+    position: relative;
+    padding: var(--spacing-2xl) 0;
+}
+
+.scale-bar {
+    position: relative;
+    height: 8px;
+    background: linear-gradient(to right, var(--mathematics-color), var(--engineering-color), var(--science-color));
+    border-radius: var(--radius-full);
+}
+
+.scale-point {
+    position: absolute;
+    top: -40px;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+}
+
+.scale-point small {
+    display: block;
+    font-weight: 400;
+    color: var(--text-light);
+    margin-top: 50px;
+}
+
+/* =========================================
+   Footer
+   ========================================= */
+.footer {
+    background: var(--text-primary);
+    color: white;
+    padding: var(--spacing-3xl) 0 var(--spacing-xl);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-2xl);
+    margin-bottom: var(--spacing-2xl);
+}
+
+.footer-brand {
+    max-width: 300px;
+}
+
+.footer-brand .logo-icon {
+    font-size: 1.5rem;
+    margin-right: var(--spacing-sm);
+}
+
+.footer-brand .logo-text {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+}
+
+.footer-brand p {
+    margin-top: var(--spacing-md);
+    color: var(--text-light);
+    font-size: var(--font-size-sm);
+}
+
+.footer-links h4,
+.footer-contact h4 {
+    margin-bottom: var(--spacing-md);
+    font-size: var(--font-size-base);
+}
+
+.footer-links ul,
+.footer-contact ul {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.footer-links a,
+.footer-contact a {
+    color: var(--text-light);
+    font-size: var(--font-size-sm);
+    transition: color var(--transition-fast);
+}
+
+.footer-links a:hover,
+.footer-contact a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: var(--spacing-xl);
+    text-align: center;
+    color: var(--text-light);
+    font-size: var(--font-size-sm);
+}
+
+/* =========================================
+   Responsive Design
+   ========================================= */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: flex;
+    }
     
+    .nav-menu {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: var(--bg-primary);
+        flex-direction: column;
+        padding: var(--spacing-lg);
+        gap: 0;
+        border-bottom: 1px solid var(--border-color);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all var(--transition-base);
+    }
+    
+    .nav-menu.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .nav-link {
+        padding: var(--spacing-md);
+        border-bottom: 1px solid var(--border-color);
+    }
+    
+    .hero-title {
+        font-size: var(--font-size-2xl);
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+    
+    .topic-nav {
+        flex-direction: column;
+    }
+    
+    .topic-btn {
+        width: 100%;
+    }
+    
+    .ipo-model {
+        flex-direction: column;
+    }
+    
+    .ipo-arrow {
+        transform: rotate(90deg);
+    }
+    
+    .network-line {
+        width: 3px;
+        height: 20px;
+    }
+    
+    .internet-visual {
+        flex-direction: column;
+    }
+    
+    .step {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .step-equation {
+        min-width: auto;
+    }
+    
+    .design-process {
+        padding-left: var(--spacing-md);
+    }
+    
+    .design-step {
+        flex-direction: column;
+    }
+    
+    .design-step::before {
+        left: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 var(--spacing-md);
+    }
+    
+    .lesson-card {
+        padding: var(--spacing-md);
+    }
+    
+    .page-icon {
+        font-size: 3rem;
+    }
+    
+    .page-header h1 {
+        font-size: var(--font-size-2xl);
+    }
+    
+    .binary-converter {
+        flex-direction: column;
+    }
+    
+    .binary-converter input {
+        width: 100%;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .navbar,
+    .nav-toggle,
+    .hero-buttons,
+    .quiz-card,
+    .practice-card,
+    .fact-dots,
+    .footer {
+        display: none !important;
+    }
+    
+    body {
+        font-size: 12pt;
+        color: black;
+    }
+    
+    .lesson-card {
+        break-inside: avoid;
+        border: 1px solid #ccc;
+    }
+}
