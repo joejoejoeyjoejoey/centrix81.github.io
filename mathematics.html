@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathematics | STEM Learning Hub</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🔬</span>
+                <span class="logo-text">STEM Hub</span>
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="science.html" class="nav-link">Science</a></li>
+                <li><a href="technology.html" class="nav-link">Technology</a></li>
+                <li><a href="engineering.html" class="nav-link">Engineering</a></li>
+                <li><a href="mathematics.html" class="nav-link active">Mathematics</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header mathematics-header">
+        <div class="container">
+            <div class="page-header-content">
+                <span class="page-icon">📐</span>
+                <h1>Mathematics</h1>
+                <p>Discover the language of patterns, shapes, and numbers that helps us understand our world.</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Topic Navigation -->
+            <div class="topic-nav">
+                <button class="topic-btn active" data-topic="algebra">Algebra</button>
+                <button class="topic-btn" data-topic="geometry">Geometry</button>
+                <button class="topic-btn" data-topic="statistics">Statistics</button>
+            </div>
+
+            <!-- Algebra Section -->
+            <section id="algebra" class="topic-section active">
+                <h2 class="topic-title">🔢 Algebra Fundamentals</h2>
+                
+                <div class="lesson-card">
+                    <h3>What is Algebra?</h3>
+                    <p>Algebra uses letters (called <strong>variables</strong>) to represent unknown numbers. It helps us solve problems and find patterns!</p>
+                    
+                    <div class="example-box">
+                        <h4>Think of it this way:</h4>
+                        <p>If you have 3 boxes of cookies and each box has <strong>x</strong> cookies, you have <strong>3x</strong> cookies total!</p>
+                    </div>
+                </div>
+
+                <div class="lesson-card">
+                    <h3>Solving Linear Equations</h3>
+                    <p>To solve an equation, get the variable alone on one side. Use inverse operations!</p>
+                    
+                    <div class="math-example">
+                        <h4>Example: Solve 2x + 5 = 13</h4>
+                        <div class="solution-steps">
+                            <div class="step">
+                                <span class="step-equation">2x + 5 = 13</span>
+                                <span class="step-explanation">Start with the equation</span>
+                            </div>
+                            <div class="step">
+                                <span class="step-equation">2x + 5 - 5 = 13 - 5</span>
+                                <span class="step-explanation">Subtract 5 from both sides</span>
+                            </div>
+                            <div class="step">
+                                <span class="step-equation">2x = 8</span>
+                                <span class="step-explanation">Simplify</span>
+                            </div>
+                            <div class="step">
+                                <span class="step-equation">2x ÷ 2 = 8 ÷ 2</span>
+                                <span class="step-explanation">Divide both sides by 2</span>
+                            </div>
+                            <div class="step final">
+                                <span class="step-equation">x = 4</span>
+                                <span class="step-explanation">Solution! ✓</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-card">
+                    <h3>Order of Operations (PEMDAS)</h3>
+                    <p>When solving expressions with multiple operations, follow this order:</p>
+                    
+                    <div class="pemdas-grid">
+                        <div class="pemdas-item">
+                            <span class="pemdas-letter">P</span>
+                            <span class="pemdas-word">Parentheses</span>
+                            <span class="pemdas-example">(3 + 2)</span>
+                        </div>
+                        <div class="pemdas-item">
+                            <span class="pemdas-letter">E</span>
+                            <span class="pemdas-word">Exponents</span>
+                            <span class="pemdas-example">2³</span>
+                        </div>
+                        <div class="pemdas-item">
+                            <span class="pemdas-letter">M</span>
+                            <span class="pemdas-word">Multiplication</span>
+                            <span class="pemdas-example">4 × 5</span>
+                        </div>
+                        <div class="pemdas-item">
+                            <span class="pemdas-letter">D</span>
+                            <span class="pemdas-word">Division</span>
+                            <span class="pemdas-example">10 ÷ 2</span>
+                        </div>
+                        <div class="pemdas-item">
+                            <span class="pemdas-letter">A</span>
+                            <span class="pemdas-word">Addition</span>
+                            <span class="pemdas-example">6 + 3</span>
+                        </div>
+                        <div class="pemdas-item">
+                            <span class="pemdas-letter">S</span>
+                            <span class="pemdas-word">Subtraction</span>
+                            <span class="pemdas-example">9 - 4</span>
+                        </div>
+                    </div>
+                    
+                    <div class="example-box">
+                        <h4>Example: Solve 3 + 4 × 2²</h4>
+                        <p>= 3 + 4 × 4 (exponents first: 2² = 4)</p>
+                        <p>= 3 + 16 (multiplication next: 4 × 4 = 16)</p>
+                        <p>= <strong>19</strong> (addition last)</p>
+                    </div>
+                </div>
+
+                <!-- Practice Problems -->
+                <div class="practice-card">
+                    <h3>✏️ Practice Problems</h3>
+                    
+                    <div class="practice-problem">
+                        <p class="problem-text"><strong>1.</strong> Solve for x: 5x - 3 = 22</p>
+                        <div class="answer-input">
+                            <input type="number" placeholder="x = ?" class="practice-input" data-answer="5">
+                            <button class="btn btn-small check-practice">Check</button>
+                        </div>
+                        <p class="practice-feedback"></p>
+                    </div>
+                    
+                    <div class="practice-problem">
+                        <p class="problem-text"><strong>2.</strong> Evaluate: 2 × (3 + 5)² ÷ 4</p>
+                        <div class="answer-input">
+                            <input type="number" placeholder="Answer?" class="practice-input" data-answer="32">
+                            <button class="btn btn-small check-practice">Check</button>
+                        </div>
+                        <p class="practice-feedback"></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Geometry Section -->
+            <section id="geometry" class="topic-section">
+                <h2 class="topic-title">📐 Geometry</h2>
+                
+                <div class="lesson-card">
+                    <h3>Basic Shapes and Formulas</h3>
+                    
+                    <div class="shapes-formulas">
+                        <div class="shape-formula-card">
+                            <div class="shape-visual">▭</div>
+                            <h4>Rectangle</h4>
+                            <div class="formula-group">
+                                <p><strong>Area</strong> = length × width</p>
+                                <p><strong>Perimeter</strong> = 2(l + w)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="shape-formula-card">
+                            <div class="shape-visual">▲</div>
+                            <h4>Triangle</h4>
+                            <div class="formula-group">
+                                <p><strong>Area</strong> = ½ × base × height</p>
+                                <p><strong>Perimeter</strong> = a + b + c</p>
+                            </div>
+                        </div>
+                        
+                        <div class="shape-formula-card">
+                            <div class="shape-visual">●</div>
+                            <h4>Circle</h4>
+                            <div class="formula-group">
+                                <p><strong>Area</strong> = π × r²</p>
+                                <p><strong>Circumference</strong> = 2πr</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-card">
+                    <h3>The Pythagorean Theorem</h3>
+                    <p>In a right triangle, the square of the longest side (hypotenuse) equals the sum of the squares of the other two sides.</p>
+                    
+                    <div class="theorem-visual">
+                        <div class="triangle-diagram">
+                            <div class="side-a">a</div>
+                            <div class="side-b">b</div>
+                            <div class="side-c">c</div>
+                        </div>
+                        <div class="formula-box large">
+                            <span class="formula">a² + b² = c²</span>
+                        </div>
+                    </div>
+                    
+                    <div class="math-example">
+                        <h4>Example: Find c if a = 3 and b = 4</h4>
+                        <div class="solution-steps">
+                            <div class="step">
+                                <span class="step-equation">3² + 4² = c²</span>
+                            </div>
+                            <div class="step">
+                                <span class="step-equation">9 + 16 = c²</span>
+                            </div>
+                            <div class="step">
+                                <span class="step-equation">25 = c²</span>
+                            </div>
+                            <div class="step final">
+                                <span class="step-equation">c = 5</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-card">
+                    <h3>Angle Relationships</h3>
+                    
+                    <div class="angles-grid">
+                        <div class="angle-type">
+                            <div class="angle-visual acute">∠</div>
+                            <h4>Acute Angle</h4>
+                            <p>Less than 90°</p>
+                        </div>
+                        <div class="angle-type">
+                            <div class="angle-visual right">∟</div>
+                            <h4>Right Angle</h4>
+                            <p>Exactly 90°</p>
+                        </div>
+                        <div class="angle-type">
+                            <div class="angle-visual obtuse">∠</div>
+                            <h4>Obtuse Angle</h4>
+                            <p>More than 90°, less than 180°</p>
+                        </div>
+                        <div class="angle-type">
+                            <div class="angle-visual straight">—</div>
+                            <h4>Straight Angle</h4>
+                            <p>Exactly 180°</p>
+                        </div>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>Key Facts:</h4>
+                        <ul>
+                            <li><strong>Complementary angles</strong> add up to 90°</li>
+                            <li><strong>Supplementary angles</strong> add up to 180°</li>
+                            <li>Angles in a <strong>triangle</strong> add up to 180°</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Statistics Section -->
+            <section id="statistics" class="topic-section">
+                <h2 class="topic-title">📊 Statistics & Probability</h2>
+                
+                <div class="lesson-card">
+                    <h3>Measures of Central Tendency</h3>
+                    <p>These values describe the "center" of a data set:</p>
+                    
+                    <div class="stats-measures">
+                        <div class="measure-card">
+                            <h4>Mean (Average)</h4>
+                            <p>Add all values, divide by the count</p>
+                            <div class="formula-box">
+                                <span class="formula">Mean = Sum of values ÷ Number of values</span>
+                            </div>
+                        </div>
+                        
+                        <div class="measure-card">
+                            <h4>Median</h4>
+                            <p>The middle value when data is ordered</p>
+                            <div class="example-box small">
+                                <p>Data: 2, 5, 7, 8, 12 → Median = <strong>7</strong></p>
+                            </div>
+                        </div>
+                        
+                        <div class="measure-card">
+                            <h4>Mode</h4>
+                            <p>The value that appears most often</p>
+                            <div class="example-box small">
+                                <p>Data: 3, 5, 5, 7, 5, 9 → Mode = <strong>5</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-card">
+                    <h3>Interactive: Calculate the Mean</h3>
+                    
+                    <div class="mean-calculator">
+                        <p>Enter numbers separated by commas:</p>
+                        <div class="calc-input-group">
+                            <input type="text" id="numbers-input" placeholder="e.g., 5, 10, 15, 20">
+                            <button class="btn btn-primary" id="calculate-mean">Calculate</button>
+                        </div>
+                        <div class="calc-results">
+                            <div class="result-item">
+                                <span class="result-label">Mean:</span>
+                                <span class="result-value" id="mean-result">-</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-label">Median:</span>
+                                <span class="result-value" id="median-result">-</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-label">Mode:</span>
+                                <span class="result-value" id="mode-result">-</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-card">
+                    <h3>Probability</h3>
+                    <p><strong>Probability</strong> measures how likely an event is to happen.</p>
+                    
+                    <div class="formula-box">
+                        <span class="formula">Probability = Favorable outcomes ÷ Total possible outcomes</span>
+                    </div>
+                    
+                    <div class="probability-examples">
+                        <h4>🎲 Example: Rolling a Die</h4>
+                        <p>What's the probability of rolling a 3?</p>
+                        <ul>
+                            <li>Favorable outcomes: 1 (just the number 3)</li>
+                            <li>Total outcomes: 6 (numbers 1-6)</li>
+                            <li>Probability = 1/6 ≈ 0.167 or about <strong>16.7%</strong></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="probability-scale">
+                        <h4>Probability Scale</h4>
+                        <div class="scale-visual">
+                            <div class="scale-bar">
+                                <span class="scale-point" style="left: 0%;">0<br><small>Impossible</small></span>
+                                <span class="scale-point" style="left: 25%;">0.25<br><small>Unlikely</small></span>
+                                <span class="scale-point" style="left: 50%;">0.5<br><small>Even chance</small></span>
+                                <span class="scale-point" style="left: 75%;">0.75<br><small>Likely</small></span>
+                                <span class="scale-point" style="left: 100%;">1<br><small>Certain</small></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">🔬</span>
+                    <span class="logo-text">STEM Hub</span>
+                    <p>Making STEM education accessible and fun for 8th graders everywhere.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="science.html">Science</a></li>
+                        <li><a href="technology.html">Technology</a></li>
+                        <li><a href="engineering.html">Engineering</a></li>
+                        <li><a href="mathematics.html">Mathematics</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Study Tips</a></li>
+                        <li><a href="#">Practice Problems</a></li>
+                        <li><a href="#">Video Tutorials</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 STEM Learning Hub. Made with ❤️ for students.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
